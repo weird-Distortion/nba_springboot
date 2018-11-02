@@ -1,5 +1,8 @@
-com/homesoft/springboot/nba_springboot/controller/TeamsController.class
+com/homesoft/springboot/nba_springboot/service/ConferenceService.class
 com/homesoft/springboot/nba_springboot/controller/WelcomeController.class
+com/homesoft/springboot/nba_springboot/controller/TeamsController.class
 com/homesoft/springboot/nba_springboot/NbaSpringbootApplication.class
+com/homesoft/springboot/nba_springboot/model/Division.class
 com/homesoft/springboot/nba_springboot/model/Team.class
 com/homesoft/springboot/nba_springboot/service/TeamService.class
+com/homesoft/springboot/nba_springboot/model/Conference.class

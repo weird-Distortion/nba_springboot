@@ -4,11 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Conference {
+    private int id;
     private String conferenceTitle;
     private List<Team> conferenceTeams;
     private List<Division> conferenceDivisions;
 
-    public Conference(String conferenceTitle) {
+    public Conference(int id, String conferenceTitle) {
+        this.id = id;
         this.conferenceTitle = conferenceTitle;
         this.conferenceTeams = new ArrayList<>();
         this.conferenceDivisions = new ArrayList<>();
@@ -38,5 +40,13 @@ public class Conference {
     public void addDivisionToConference(Division division) {
         assert division != null && conferenceDivisions.size() < 3;
         conferenceDivisions.add(division);
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

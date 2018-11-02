@@ -1,5 +1,8 @@
+/home/distortion/projects/java/nba_springboot/src/main/java/com/homesoft/springboot/nba_springboot/model/Division.java
 /home/distortion/projects/java/nba_springboot/src/main/java/com/homesoft/springboot/nba_springboot/model/Team.java
 /home/distortion/projects/java/nba_springboot/src/main/java/com/homesoft/springboot/nba_springboot/service/TeamService.java
+/home/distortion/projects/java/nba_springboot/src/main/java/com/homesoft/springboot/nba_springboot/service/ConferenceService.java
 /home/distortion/projects/java/nba_springboot/src/main/java/com/homesoft/springboot/nba_springboot/controller/TeamsController.java
 /home/distortion/projects/java/nba_springboot/src/main/java/com/homesoft/springboot/nba_springboot/controller/WelcomeController.java
 /home/distortion/projects/java/nba_springboot/src/main/java/com/homesoft/springboot/nba_springboot/NbaSpringbootApplication.java
+/home/distortion/projects/java/nba_springboot/src/main/java/com/homesoft/springboot/nba_springboot/model/Conference.java

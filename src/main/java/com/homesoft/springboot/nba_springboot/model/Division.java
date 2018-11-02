@@ -4,10 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Division {
+    private int id;
     private String divisionTitle;
     private List<Team> divisionTeams;
 
-    public Division(String divisionTitle) {
+    public Division(int id, String divisionTitle) {
+        this.id = id;
         this.divisionTitle = divisionTitle;
         this.divisionTeams = new ArrayList<>();
     }
@@ -32,6 +34,14 @@ public class Division {
 
     public void setDivisionTitle(String divisionTitle) {
         this.divisionTitle = divisionTitle;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     @Override

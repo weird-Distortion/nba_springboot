@@ -8,8 +8,16 @@
 </head>
 <body>
 <p class="text-center">Regular season</p>
-<%--<form action="" method="get">--%>
-  <%--<button type="submit" class="btn btn-success">Random</button>--%>
+<form method="post">
+  <div class="form-group">
+    <label for="teamTitle">Title</label>
+    <input type="text" name="teamTitle" id="teamTitle">
+    <label for="teamCity">City</label>
+    <input type="text" name="teamCity" id="teamCity">
+    <button class="btn btn-primary" type="submit">Add</button>
+  </div>
+  <button type="submit" class="btn btn-success">Random</button>
+</form>
 <div class="container">
   <div class="row">
     <div class="col">
@@ -18,7 +26,6 @@
     </div>
   </div>
 </div>
-<%--</form>--%>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
