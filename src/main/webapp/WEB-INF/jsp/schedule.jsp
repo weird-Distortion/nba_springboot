@@ -13,7 +13,7 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      ${divisionTeams}
+      ${teams}
       :::::
     </div>
   </div>
