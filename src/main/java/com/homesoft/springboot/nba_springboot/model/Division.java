@@ -4,27 +4,41 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Division {
-    private List<Team> teams;
+    private String divisionTitle;
+    private List<Team> divisionTeams;
 
-    public Division() {
-        this.teams = new ArrayList<>();
-    }
-
-    public Division(List<Team> teams) {
-        this.teams = teams;
+    public Division(String divisionTitle) {
+        this.divisionTitle = divisionTitle;
+        this.divisionTeams = new ArrayList<>();
     }
 
     public void addTeamToDivision(Team team) {
-        assert team != null;
-        this.teams.add(team);
+        assert team != null && divisionTeams.size() < 5;
+        this.divisionTeams.add(team);
     }
 
     public void removeTeamFromDivision(Team team) {
-        assert team != null && teams.size() > 0;
-        this.teams.remove(team);
+        assert team != null && divisionTeams.size() > 0;
+        this.divisionTeams.remove(team);
     }
 
-    public List<Team> retrieveAllTeams() {
-        return teams;
+    public List<Team> retrieveAllDivisionTeams() {
+        return divisionTeams;
+    }
+
+    public String getDivisionTitle() {
+        return divisionTitle;
+    }
+
+    public void setDivisionTitle(String divisionTitle) {
+        this.divisionTitle = divisionTitle;
+    }
+
+    @Override
+    public String toString() {
+        return "Division{" +
+                "divisionTitle='" + divisionTitle + '\'' +
+                ", divisionTeams=" + divisionTeams +
+                '}';
     }
 }

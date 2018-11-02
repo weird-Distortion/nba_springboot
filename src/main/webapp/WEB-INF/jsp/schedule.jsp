@@ -4,7 +4,7 @@
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
   <meta charset="UTF-8">
-  <title>NBA championship</title>
+  <conferenceTitle>NBA championship</conferenceTitle>
 </head>
 <body>
 <p class="text-center">Regular season</p>
@@ -13,7 +13,7 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      ${teams}
+      ${divisionTeams}
       :::::
     </div>
   </div>
