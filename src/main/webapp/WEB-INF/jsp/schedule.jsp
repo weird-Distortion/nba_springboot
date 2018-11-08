@@ -1,3 +1,4 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
@@ -8,21 +9,67 @@
 </head>
 <body>
 <p class="text-center">Regular season</p>
-<form method="post">
-  <div class="form-group">
-    <label for="teamTitle">Title</label>
-    <input type="text" name="teamTitle" id="teamTitle">
-    <label for="teamCity">City</label>
-    <input type="text" name="teamCity" id="teamCity">
-    <button class="btn btn-primary" type="submit">Add</button>
-  </div>
-  <button type="submit" class="btn btn-success">Random</button>
-</form>
+<a class="btn btn-primary" href="/new-team">Add team</a>
 <div class="container">
   <div class="row">
-    <div class="col">
-      ${teams}
-      :::::
+    <div class="col-sm-6">
+      <div>West</div>
+      <table class="table">
+        <thead class="thead-dark">
+        <tr>
+          <th>#</th>
+          <th>Team</th>
+          <th>Players</th>
+          <th>Games</th>
+          <th>W</th>
+          <th>L</th>
+          <th>%</th>
+        </tr>
+        </thead>
+        <tbody>
+        <c:forEach items="${teams}" var="team">
+          <tr>
+            <td scope="row">#N</td>
+            <td scope="row">${team.teamTitle}</td>
+            <td scope="row">#P</td>
+            <td scope="row">G</td>
+            <td scope="row">#W</td>
+            <td scope="row">#L</td>
+            <td scope="row">#%</td>
+          </tr>
+        </c:forEach>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="col-sm-6">
+      <div>East</div>
+      <table class="table">
+        <thead class="thead-dark">
+        <tr>
+          <th>#</th>
+          <th>Team</th>
+          <th>Players</th>
+          <th>Games</th>
+          <th>W</th>
+          <th>L</th>
+          <th>%</th>
+        </tr>
+        </thead>
+        <tbody>
+        <c:forEach items="${teams}" var="team">
+          <tr>
+            <td scope="row">#N</td>
+            <td scope="row">${team.teamTitle}</td>
+            <td scope="row">#P</td>
+            <td scope="row">G</td>
+            <td scope="row">#W</td>
+            <td scope="row">#L</td>
+            <td scope="row">#%</td>
+          </tr>
+        </c:forEach>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>

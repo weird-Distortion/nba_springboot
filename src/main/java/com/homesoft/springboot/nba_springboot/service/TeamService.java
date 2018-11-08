@@ -12,10 +12,10 @@ public class TeamService {
     private static int teamId = 4;
 
     static {
-        teams.add(new Team(1, "Rockets", "Housto"));
-        teams.add(new Team(2, "Heat", "Miami"));
-        teams.add(new Team(3, "Lakers", "Los Angeles"));
-        teams.add(new Team(4, "Raptors", "Toronto"));
+        teams.add(new Team("Rockets", "Houston"));
+        teams.add(new Team("Heat", "Miami"));
+        teams.add(new Team("Lakers", "Los Angeles"));
+        teams.add(new Team("Raptors", "Toronto"));
     }
 
     public List<Team> retrieveTeams() {
@@ -23,10 +23,10 @@ public class TeamService {
     }
 
     public void addTeam(String title, String city) {
-        teams.add(new Team(++teamId, title, city));
+        teams.add(new Team(title, city));
     }
 
     public void removeTeam(int id) {
-        teams.removeIf(team -> team.getId() == id);
+        teams.removeIf(team -> team.getTeamId() == id);
     }
 }

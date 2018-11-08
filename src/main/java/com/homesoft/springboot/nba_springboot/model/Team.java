@@ -2,38 +2,38 @@ package com.homesoft.springboot.nba_springboot.model;
 
 public class Team {
     private int id;
-    private String title;
-    private String city;
-    // private Conference conference;
+    private String teamTitle;
+    private String teamCity;
 
-    public Team(int id, String title, String city) {
+    public Team() { super(); }
+
+    public Team(String teamTitle, String teamCity) {
         super();
-        this.id = id;
-        this.title = title;
-        this.city = city;
+        this.teamTitle = teamTitle;
+        this.teamCity = teamCity;
     }
 
-    public int getId() {
+    public int getTeamId() {
         return id;
+    }
+
+    public String getTeamTitle() {
+        return teamTitle;
+    }
+
+    public String getTeamCity() {
+        return teamCity;
     }
 
     public void setId(int id) {
         this.id = id;
     }
 
-    public String getTitle() {
-        return title;
+    public void setTeamTitle(String teamTitle) {
+        this.teamTitle = teamTitle;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
+    public void setTeamCity(String teamCity) {
+        this.teamCity = teamCity;
     }
 }
