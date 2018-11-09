@@ -8,7 +8,7 @@ import java.util.List;
 public class Conference {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int conferenceId;
 
     private String conferenceTitle;

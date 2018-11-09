@@ -12,15 +12,15 @@
 <p class="text-center">Add new team</p>
 
 <form:form method="post" modelAttribute="team">
-  <div>
+  <div class="form-group">
     <form:label path="teamTitle">Title</form:label>
     <form:input path="teamTitle" type="text"/>
     <form:label path="teamCity">City</form:label>
     <form:input path="teamCity" type="text"/>
 
     <div class="form-group">
-      <label for="conferenceList">Select conference:</label>
-      <form:select path="teamConference" id="conferenceList">
+      <form:label path="teamConference">Select conference:</form:label>
+      <form:select path="teamConference" id="conferenceList" class="form-control">
           <form:options items="${conference}" itemLabel="conferenceTitle"/>
       </form:select>
     </div>
