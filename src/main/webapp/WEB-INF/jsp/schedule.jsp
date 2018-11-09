@@ -30,15 +30,17 @@
           </thead>
           <tbody>
           <c:forEach items="${teams}" var="team">
-            <tr>
-              <td scope="row">#N</td>
-              <td scope="row">${team.teamTitle}</td>
-              <td scope="row">#P</td>
-              <td scope="row">G</td>
-              <td scope="row">#W</td>
-              <td scope="row">#L</td>
-              <td scope="row">#%</td>
-            </tr>
+            <c:if test="${team.teamConference.conferenceId == conference.conferenceId}">
+              <tr>
+                <td scope="row">#N</td>
+                <td scope="row">${team.teamTitle}</td>
+                <td scope="row">#P</td>
+                <td scope="row">G</td>
+                <td scope="row">#W</td>
+                <td scope="row">#L</td>
+                <td scope="row">#%</td>
+              </tr>
+            </c:if>
           </c:forEach>
           </tbody>
         </table>
