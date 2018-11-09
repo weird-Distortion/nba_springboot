@@ -13,7 +13,7 @@ public class Conference {
 
     private String conferenceTitle;
 
-    @OneToMany(mappedBy = "teamId")
+    @OneToMany(mappedBy = "teamConference")
     private List<Team> conferenceTeams;
 
     public Conference() {
