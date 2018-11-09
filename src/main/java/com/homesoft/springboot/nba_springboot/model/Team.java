@@ -1,20 +1,31 @@
 package com.homesoft.springboot.nba_springboot.model;
 
+import javax.persistence.*;
+
+@Entity
 public class Team {
-    private int id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int teamId;
+
+    @Column
     private String teamTitle;
+
+    @Column
     private String teamCity;
+
+    @ManyToOne
+    @JoinColumn(name = "conferenceId", nullable = false)
+    private Conference teamConference;
 
     public Team() { super(); }
 
-    public Team(String teamTitle, String teamCity) {
-        super();
-        this.teamTitle = teamTitle;
-        this.teamCity = teamCity;
+    public void setTeamId(int teamId) {
+        this.teamId = teamId;
     }
 
     public int getTeamId() {
-        return id;
+        return teamId;
     }
 
     public String getTeamTitle() {
@@ -25,15 +36,19 @@ public class Team {
         return teamCity;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public void setTeamTitle(String teamTitle) {
         this.teamTitle = teamTitle;
     }
 
     public void setTeamCity(String teamCity) {
         this.teamCity = teamCity;
+    }
+
+    public Conference getTeamConference() {
+        return teamConference;
+    }
+
+    public void setTeamConference(Conference teamConference) {
+        this.teamConference = teamConference;
     }
 }

@@ -10,67 +10,40 @@
 <body>
 <p class="text-center">Regular season</p>
 <a class="btn btn-primary" href="/new-team">Add team</a>
+<a class="btn btn-primary" href="/new-conference">Add conference</a>
 <div class="container">
   <div class="row">
-    <div class="col-sm-6">
-      <div>West</div>
-      <table class="table">
-        <thead class="thead-dark">
-        <tr>
-          <th>#</th>
-          <th>Team</th>
-          <th>Players</th>
-          <th>Games</th>
-          <th>W</th>
-          <th>L</th>
-          <th>%</th>
-        </tr>
-        </thead>
-        <tbody>
-        <c:forEach items="${teams}" var="team">
+    <c:forEach items="${conferences}" var="conference">
+      <div class="col-sm">
+        <div>${conference.conferenceTitle}</div>
+        <table class="table">
+          <thead class="thead-dark">
           <tr>
-            <td scope="row">#N</td>
-            <td scope="row">${team.teamTitle}</td>
-            <td scope="row">#P</td>
-            <td scope="row">G</td>
-            <td scope="row">#W</td>
-            <td scope="row">#L</td>
-            <td scope="row">#%</td>
+            <th>#</th>
+            <th>Team</th>
+            <th>Players</th>
+            <th>Games</th>
+            <th>W</th>
+            <th>L</th>
+            <th>%</th>
           </tr>
-        </c:forEach>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="col-sm-6">
-      <div>East</div>
-      <table class="table">
-        <thead class="thead-dark">
-        <tr>
-          <th>#</th>
-          <th>Team</th>
-          <th>Players</th>
-          <th>Games</th>
-          <th>W</th>
-          <th>L</th>
-          <th>%</th>
-        </tr>
-        </thead>
-        <tbody>
-        <c:forEach items="${teams}" var="team">
-          <tr>
-            <td scope="row">#N</td>
-            <td scope="row">${team.teamTitle}</td>
-            <td scope="row">#P</td>
-            <td scope="row">G</td>
-            <td scope="row">#W</td>
-            <td scope="row">#L</td>
-            <td scope="row">#%</td>
-          </tr>
-        </c:forEach>
-        </tbody>
-      </table>
-    </div>
+          </thead>
+          <tbody>
+          <c:forEach items="${teams}" var="team">
+            <tr>
+              <td scope="row">#N</td>
+              <td scope="row">${team.teamTitle}</td>
+              <td scope="row">#P</td>
+              <td scope="row">G</td>
+              <td scope="row">#W</td>
+              <td scope="row">#L</td>
+              <td scope="row">#%</td>
+            </tr>
+          </c:forEach>
+          </tbody>
+        </table>
+      </div>
+    </c:forEach>
   </div>
 </div>
 
