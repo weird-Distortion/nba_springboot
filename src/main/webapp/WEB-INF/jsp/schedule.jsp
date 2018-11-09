@@ -11,6 +11,7 @@
 <p class="text-center">Regular season</p>
 <a class="btn btn-primary" href="/new-team">Add team</a>
 <a class="btn btn-primary" href="/new-conference">Add conference</a>
+<a class="btn btn-primary" href="/new-player">Add player</a>
 <div class="container">
   <div class="row">
     <c:forEach items="${conferences}" var="conference">

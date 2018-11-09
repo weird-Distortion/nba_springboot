@@ -36,7 +36,7 @@ public class TeamsController {
     }
 
     @RequestMapping(value = "/new-team", method = RequestMethod.POST)
-    public String addTeam(ModelMap model, Team newTeam, @ModelAttribute Conference conference) {
+    public String addTeam(ModelMap model, Team newTeam) {
         teamDAO.save(newTeam);
         return "redirect:/schedule";
     }

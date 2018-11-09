@@ -1,6 +1,7 @@
 package com.homesoft.springboot.nba_springboot.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Team {
@@ -17,6 +18,9 @@ public class Team {
     @ManyToOne
     @JoinColumn(name = "conferenceId", nullable = false)
     private Conference teamConference;
+
+    @OneToMany(mappedBy = "playerTeam")
+    private List<Player> teamPlayers;
 
     public Team() { super(); }
 
@@ -50,5 +54,13 @@ public class Team {
 
     public void setTeamConference(Conference teamConference) {
         this.teamConference = teamConference;
+    }
+
+    public List<Player> getTeamPlayers() {
+        return teamPlayers;
+    }
+
+    public void setTeamPlayers(List<Player> teamPlayers) {
+        this.teamPlayers = teamPlayers;
     }
 }
