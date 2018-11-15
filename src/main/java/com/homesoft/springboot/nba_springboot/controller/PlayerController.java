@@ -21,7 +21,7 @@ public class PlayerController {
     @RequestMapping(value = "/new-player", method = RequestMethod.GET)
     public String addNewPlayer(ModelMap model) {
 
-        model.addAttribute("player", new Player());
+        model.addAttribute("newPlayer", new Player());
         model.addAttribute("team", teamDAO.findAll());
         return "new-player";
     }

@@ -1,24 +1,27 @@
 package com.homesoft.springboot.nba_springboot.controller;
 
 import com.homesoft.springboot.nba_springboot.dao.ConferenceDAO;
+import com.homesoft.springboot.nba_springboot.dao.DivisionDAO;
 import com.homesoft.springboot.nba_springboot.dao.TeamDAO;
-import com.homesoft.springboot.nba_springboot.model.Conference;
 import com.homesoft.springboot.nba_springboot.model.Team;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-public class TeamsController {
+public class TeamController {
 
     @Autowired
     private TeamDAO teamDAO;
 
     @Autowired
     private ConferenceDAO conferenceDAO;
+
+    @Autowired
+    private DivisionDAO divisionDAO;
 
     @RequestMapping(value = "/schedule", method = RequestMethod.GET)
     public String showSchedule(ModelMap model) {
@@ -31,6 +34,7 @@ public class TeamsController {
     @RequestMapping(value = "/new-team", method = RequestMethod.GET)
     public String addNewTeam(ModelMap model) {
         model.addAttribute("conference", conferenceDAO.findAll());
+        model.addAttribute("division", divisionDAO.findAll());
         model.addAttribute("team", new Team());
         return "new-team";
     }
@@ -38,6 +42,23 @@ public class TeamsController {
     @RequestMapping(value = "/new-team", method = RequestMethod.POST)
     public String addTeam(ModelMap model, Team newTeam) {
         teamDAO.save(newTeam);
+        return "redirect:/schedule";
+    }
+
+    @RequestMapping(value = "/team", method = RequestMethod.GET)
+    public String showTeamInfo(ModelMap model, @RequestParam int id) {
+        Team team = teamDAO.findById(id).get();
+        model.addAttribute("teamAttribute", team);
+        model.addAttribute("conference", conferenceDAO.findAll());
+        model.addAttribute("division", divisionDAO.findAll());
+        model.put("teamInfo", team);
+        return "team";
+    }
+
+    @RequestMapping(value = "/team", method = RequestMethod.POST)
+    public String saveTeam(ModelMap model, Team team, @RequestParam int id) {
+        teamDAO.deleteById(id);
+        teamDAO.saveAndFlush(team);
         return "redirect:/schedule";
     }
 }

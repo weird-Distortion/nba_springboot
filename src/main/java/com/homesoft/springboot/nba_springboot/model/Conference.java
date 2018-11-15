@@ -16,6 +16,9 @@ public class Conference {
     @OneToMany(mappedBy = "teamConference")
     private List<Team> conferenceTeams;
 
+    @OneToMany(mappedBy = "divisionConference")
+    private List<Division> conferenceDivisions;
+
     public Conference() {
         super();
     }
@@ -28,23 +31,10 @@ public class Conference {
         this.conferenceTitle = conferenceTitle;
     }
 
-//    public List<Team> retrieveAllConferenceTeams() {
-//        return conferenceTeams;
-//    }
-
     public void addTeamToConference(Team team) {
         assert team != null;
         conferenceTeams.add(team);
     }
-
-//    public List<Division> retrieveAllConferenceDivisions() {
-//        return conferenceDivisions;
-//    }
-//
-//    public void addDivisionToConference(Division division) {
-//        assert division != null && conferenceDivisions.size() < 3;
-//        conferenceDivisions.add(division);
-//    }
 
     public int getConferenceId() {
         return conferenceId;
@@ -60,5 +50,13 @@ public class Conference {
 
     public void setConferenceTeams(List<Team> conferenceTeams) {
         this.conferenceTeams = conferenceTeams;
+    }
+
+    public List<Division> getConferenceDivisions() {
+        return conferenceDivisions;
+    }
+
+    public void setConferenceDivisions(List<Division> conferenceDivisions) {
+        this.conferenceDivisions = conferenceDivisions;
     }
 }

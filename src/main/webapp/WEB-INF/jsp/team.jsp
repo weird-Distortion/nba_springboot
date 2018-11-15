@@ -9,13 +9,13 @@
   <conferenceTitle>NBA championship</conferenceTitle>
 </head>
 <body>
-<p class="text-center">Add new team</p>
+<p class="text-center">Team info</p>
 
-<form:form method="post" modelAttribute="team">
+<form:form method="post" modelAttribute="teamAttribute">
   <div class="form-group">
-    <form:label path="teamTitle">Title</form:label>
+    <form:label path="teamTitle">${team.teamTitle}</form:label>
     <form:input path="teamTitle" type="text"/>
-    <form:label path="teamCity">City</form:label>
+    <form:label path="teamCity">${team.teamCity}</form:label>
     <form:input path="teamCity" type="text"/>
 
     <div class="form-group">
@@ -32,7 +32,8 @@
       </form:select>
     </div>
 
-    <button type="submit" class="btn btn-success">Add</button>
+    <button type="submit" class="btn btn-success">Save</button>
+    <a class="btn btn-success" href="/schedule" role="button">Back to schedule</a>
   </div>
 </form:form>
 

@@ -9,26 +9,17 @@
   <conferenceTitle>NBA championship</conferenceTitle>
 </head>
 <body>
-<p class="text-center">Add new team</p>
+<p class="text-center">Add new division</p>
 
-<form:form method="post" modelAttribute="team">
+<form:form method="post" modelAttribute="division">
   <div class="form-group">
-    <form:label path="teamTitle">Title</form:label>
-    <form:input path="teamTitle" type="text"/>
-    <form:label path="teamCity">City</form:label>
-    <form:input path="teamCity" type="text"/>
+    <form:label path="divisionTitle">Title</form:label>
+    <form:input path="divisionTitle" type="text"/>
 
     <div class="form-group">
-      <form:label path="teamConference">Select conference:</form:label>
-      <form:select path="teamConference" class="form-control">
+      <form:label path="divisionConference">Select conference:</form:label>
+      <form:select path="divisionConference" class="form-control">
           <form:options items="${conference}" itemLabel="conferenceTitle"/>
-      </form:select>
-    </div>
-
-    <div class="form-group">
-      <form:label path="teamDivision">Select division:</form:label>
-      <form:select path="teamDivision" class="form-control">
-        <form:options items="${division}" itemLabel="divisionTitle"/>
       </form:select>
     </div>
 

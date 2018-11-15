@@ -1,31 +1,35 @@
 package com.homesoft.springboot.nba_springboot.model;
 
-import java.util.ArrayList;
+import javax.persistence.*;
 import java.util.List;
 
+@Entity
 public class Division {
-    private int id;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int divisionId;
+
+    @Column
     private String divisionTitle;
+
+    @ManyToOne
+    @JoinColumn(name = "conferenceId", nullable = false)
+    private Conference divisionConference;
+
+    @OneToMany(mappedBy = "teamDivision")
     private List<Team> divisionTeams;
 
-    public Division(int id, String divisionTitle) {
-        this.id = id;
-        this.divisionTitle = divisionTitle;
-        this.divisionTeams = new ArrayList<>();
+    public Division() {
+        super();
     }
 
-    public void addTeamToDivision(Team team) {
-        assert team != null && divisionTeams.size() < 5;
-        this.divisionTeams.add(team);
+    public int getDivisionId() {
+        return divisionId;
     }
 
-    public void removeTeamFromDivision(Team team) {
-        assert team != null && divisionTeams.size() > 0;
-        this.divisionTeams.remove(team);
-    }
-
-    public List<Team> retrieveAllDivisionTeams() {
-        return divisionTeams;
+    public void setDivisionId(int divisionId) {
+        this.divisionId = divisionId;
     }
 
     public String getDivisionTitle() {
@@ -36,19 +40,19 @@ public class Division {
         this.divisionTitle = divisionTitle;
     }
 
-    public int getId() {
-        return id;
+    public Conference getDivisionConference() {
+        return divisionConference;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setDivisionConference(Conference divisionConference) {
+        this.divisionConference = divisionConference;
     }
 
-    @Override
-    public String toString() {
-        return "Division{" +
-                "divisionTitle='" + divisionTitle + '\'' +
-                ", divisionTeams=" + divisionTeams +
-                '}';
+    public List<Team> getDivisionTeams() {
+        return divisionTeams;
+    }
+
+    public void setDivisionTeams(List<Team> divisionTeams) {
+        this.divisionTeams = divisionTeams;
     }
 }

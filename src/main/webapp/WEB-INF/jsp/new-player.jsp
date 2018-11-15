@@ -11,7 +11,7 @@
 <body>
 <p class="text-center">Add new player</p>
 
-<form:form method="post" modelAttribute="player">
+<form:form method="post" modelAttribute="newPlayer">
   <div class="form-group">
     <form:label path="playerFirstName">First name</form:label>
     <form:input path="playerFirstName" type="text"/>

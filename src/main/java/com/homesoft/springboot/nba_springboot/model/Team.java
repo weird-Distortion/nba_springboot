@@ -19,6 +19,10 @@ public class Team {
     @JoinColumn(name = "conferenceId", nullable = false)
     private Conference teamConference;
 
+    @ManyToOne
+    @JoinColumn(name = "divisionId")
+    private Division teamDivision;
+
     @OneToMany(mappedBy = "playerTeam")
     private List<Player> teamPlayers;
 
@@ -62,5 +66,13 @@ public class Team {
 
     public void setTeamPlayers(List<Player> teamPlayers) {
         this.teamPlayers = teamPlayers;
+    }
+
+    public Division getTeamDivision() {
+        return teamDivision;
+    }
+
+    public void setTeamDivision(Division teamDivision) {
+        this.teamDivision = teamDivision;
     }
 }
