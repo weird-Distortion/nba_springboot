@@ -37,7 +37,8 @@ public class ConferenceController {
         Conference conference = conferenceDAO.findById(id).get();
         model.addAttribute("conferenceAttribute", conference);
         model.put("conference", conference);
-        model.put("teams", teamDAO.findAll());
+        model.put("teams", conference.getConferenceTeams());
+        model.put("divisions", conference.getConferenceDivisions());
 
         return "conference";
     }

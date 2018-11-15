@@ -60,7 +60,7 @@ public class TeamController {
         return "team";
     }
 
-    //HOW TO UPDATE DIVISION? 
+    //HOW TO UPDATE DIVISION?
 //    @RequestMapping(value = "/team", method = RequestMethod.POST)
 //    public String saveTeam(ModelMap model, Team team, @RequestParam int id) {
 //        teamDAO.deleteById(id);
