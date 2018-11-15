@@ -17,7 +17,7 @@
   <div class="row">
     <c:forEach items="${conferences}" var="conference">
       <div class="col-sm">
-        <div>${conference.conferenceTitle}</div>
+        <div><a href="/conference?id=${conference.conferenceId}">${conference.conferenceTitle}</a></div>
         <table class="table">
           <thead class="thead-dark">
           <tr>
