@@ -54,17 +54,17 @@ public class TeamController {
     public String showTeamInfo(ModelMap model, @RequestParam int id) {
         Team team = teamDAO.findById(id).get();
         model.addAttribute("teamAttribute", team);
-        model.addAttribute("conference", conferenceDAO.findAll());
-        model.addAttribute("division", divisionDAO.findAll());
+        model.addAttribute("conference", team.getTeamConference());
+        model.addAttribute("division", team.getTeamDivision());
         model.put("players", team.getTeamPlayers());
-//        model.put("teamInfo", team);
         return "team";
     }
 
-    @RequestMapping(value = "/team", method = RequestMethod.POST)
-    public String saveTeam(ModelMap model, Team team, @RequestParam int id) {
-        teamDAO.deleteById(id);
-        teamDAO.saveAndFlush(team);
-        return "redirect:/schedule";
-    }
+    //HOW TO UPDATE DIVISION? 
+//    @RequestMapping(value = "/team", method = RequestMethod.POST)
+//    public String saveTeam(ModelMap model, Team team, @RequestParam int id) {
+//        teamDAO.deleteById(id);
+//        teamDAO.save(team);
+//        return "redirect:/schedule";
+//    }
 }

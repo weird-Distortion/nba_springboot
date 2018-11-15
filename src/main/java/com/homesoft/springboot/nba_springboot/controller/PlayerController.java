@@ -38,8 +38,14 @@ public class PlayerController {
     public String showPlayerInfo(ModelMap model, @RequestParam int id) {
         Player player = playerDAO.findById(id).get();
         model.addAttribute("playerAttribute", player);
-//        model.put("players", playerDAO.findAll());
-        model.put("playerInfo", player);
+        model.put("teams", teamDAO.findAll());
         return "player";
+    }
+
+    @RequestMapping(value = "/player", method = RequestMethod.POST)
+    public String savePlayer(Player player, @RequestParam int id) {
+        playerDAO.deleteById(id);
+        playerDAO.save(player);
+        return "redirect:/schedule";
     }
 }

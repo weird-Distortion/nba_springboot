@@ -29,7 +29,7 @@
     <div class="form-group">
       <form:label path="playerTeam">Select team:</form:label>
       <form:select path="playerTeam" class="form-control">
-          <form:options items="${team}" itemLabel="teamTitle"/>
+        <form:options items="${team}" itemLabel="teamTitle"/>
       </form:select>
     </div>
 

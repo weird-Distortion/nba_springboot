@@ -16,25 +16,30 @@
 
 <form:form method="post" modelAttribute="playerAttribute">
   <div class="form-group">
-    <form:label path="playerFirstName">${player.playerFirstName}</form:label>
+    <form:label path="playerFirstName">${playerAttribute.playerFirstName}</form:label>
     <form:input path="playerFirstName" type="text"/>
-    <form:label path="playerLastName">${player.playerLastName}</form:label>
+    <form:label path="playerLastName">${playerAttribute.playerLastName}</form:label>
     <form:input path="playerLastName" type="text"/>
-    <form:label path="playerNumber">${player.playerNumber}</form:label>
+    <form:label path="playerNumber">${playerAttribute.playerNumber}</form:label>
     <form:input path="playerNumber" type="number" min="0" />
-    <form:label path="playerAttackRate">${player.playerAttackRate}</form:label>
+    <form:label path="playerAttackRate">${playerAttribute.playerAttackRate}</form:label>
     <form:input path="playerAttackRate" type="number" step="0.01" min="0"/>
-    <form:label path="playerDefenceRate">${player.playerDefenceRate}</form:label>
+    <form:label path="playerDefenceRate">${playerAttribute.playerDefenceRate}</form:label>
     <form:input path="playerDefenceRate" type="number" step="0.01" min="0"/>
-    <form:label path="playerLongShotRate">${player.playerLongShotRate}</form:label>
+    <form:label path="playerLongShotRate">${playerAttribute.playerLongShotRate}</form:label>
     <form:input path="playerLongShotRate" type="number" step="0.01" min="0"/>
 
     <div class="form-group">
       <form:label path="playerTeam">Team:</form:label>
       <form:select path="playerTeam" class="form-control">
-        <form:options items="${team}" itemLabel="teamTitle"/>
+        <form:options items="${teams}" itemLabel="teamTitle"/>
       </form:select>
     </div>
+
+    <button type="submit" class="btn btn-success">Save</button>
+    <a class="btn btn-primary" href="/schedule">Back to regular season</a>
+
+
   </div>
 </form:form>
 

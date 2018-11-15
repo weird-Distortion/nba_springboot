@@ -18,53 +18,49 @@
     <form:label path="teamCity">${teamAttribute.teamCity}</form:label>
     <form:input path="teamCity" type="text"/>
 
-    <div class="form-group">
-      <form:label path="teamConference">Select conference:</form:label>
-      <form:select path="teamConference" class="form-control">
-          <form:options items="${conference}" itemLabel="conferenceTitle"/>
-      </form:select>
-    </div>
-
-    <div class="form-group">
-      <form:label path="teamDivision">Select division:</form:label>
-      <form:select path="teamDivision" class="form-control">
-        <form:options items="${division}" itemLabel="divisionTitle"/>
-      </form:select>
-    </div>
-
-    <button type="submit" class="btn btn-success">Save</button>
+    <%--<button type="submit" class="btn btn-success">Save</button>--%>
     <a class="btn btn-success" href="/schedule" role="button">Back to schedule</a>
   </div>
 </form:form>
+
+<div class="form-group">
+  <div>
+    <label for="divisionDiv">Division:</label>
+    <input type="text" value="${division.divisionTitle}" id="divisionDiv" readonly>
+  </div>
+  <div>
+    <label for="conferenceDiv">Conference:</label>
+    <input type="text" value="${conference.conferenceTitle}" id="conferenceDiv" readonly>
+  </div>
+</div>
 
 <div class="container">
   <div class="row">
     <div class="col-sm-6">
       <table class="table">
         <thead class="thead-dark">
-          <tr>
-            <th>#</th>
-            <th>Name</th>
-            <th>Attack rate</th>
-            <th>Defence rate</th>
-            <th>3-point rate</th>
-          </tr>
-        </thead> 
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Attack rate</th>
+          <th>Defence rate</th>
+          <th>3-point rate</th>
+        </tr>
+        </thead>
         <tbody>
         <c:forEach items="${players}" var="player">
-          <%--<c:if test="${player.playerTeam.teamId == team.teamId}">--%>
-            <tr>
-              <td scope="row">${player.playerNumber}</td>
-              <td scope="row"><a href="/player?id=${player.playerId}">${player.playerFirstName} ${player.playerLastName}</a></td>
-              <td scope="row">${player.playerAttackRate}</td>
-              <td scope="row">${player.playerDefenceRate}</td>
-              <td scope="row">${player.playerLongShotRate}</td>
-            </tr>
-          <%--</c:if>--%>
+          <tr>
+            <td scope="row">${player.playerNumber}</td>
+            <td scope="row"><a
+                    href="/player?id=${player.playerId}">${player.playerFirstName} ${player.playerLastName}</a></td>
+            <td scope="row">${player.playerAttackRate}</td>
+            <td scope="row">${player.playerDefenceRate}</td>
+            <td scope="row">${player.playerLongShotRate}</td>
+          </tr>
         </c:forEach>
         </tbody>
       </table>
-    </div>    
+    </div>
   </div>
 </div>
 
