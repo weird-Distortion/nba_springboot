@@ -16,19 +16,29 @@
 
 <form:form method="post" modelAttribute="playerAttribute">
   <div class="form-group">
-    <form:label path="playerFirstName">${playerAttribute.playerFirstName}</form:label>
-    <form:input path="playerFirstName" type="text"/>
-    <form:label path="playerLastName">${playerAttribute.playerLastName}</form:label>
-    <form:input path="playerLastName" type="text"/>
-    <form:label path="playerNumber">${playerAttribute.playerNumber}</form:label>
-    <form:input path="playerNumber" type="number" min="0" />
-    <form:label path="playerAttackRate">${playerAttribute.playerAttackRate}</form:label>
-    <form:input path="playerAttackRate" type="number" step="0.01" min="0"/>
-    <form:label path="playerDefenceRate">${playerAttribute.playerDefenceRate}</form:label>
-    <form:input path="playerDefenceRate" type="number" step="0.01" min="0"/>
-    <form:label path="playerLongShotRate">${playerAttribute.playerLongShotRate}</form:label>
-    <form:input path="playerLongShotRate" type="number" step="0.01" min="0"/>
-
+    <div>
+      <form:label path="playerFirstName">First name:</form:label>
+      <form:input path="playerFirstName" type="text"/>
+    </div>
+    <div>
+      <form:label path="playerLastName">Last name:</form:label>
+      <form:input path="playerLastName" type="text"/></div>
+    <div>
+      <form:label path="playerNumber">Number:</form:label>
+      <form:input path="playerNumber" type="number" min="0"/>
+    </div>
+    <div>
+      <form:label path="playerAttackRate">Attack rate:</form:label>
+      <form:input path="playerAttackRate" type="number" step="0.01" min="0"/>
+    </div>
+    <div>
+      <form:label path="playerDefenceRate">Defence rate:</form:label>
+      <form:input path="playerDefenceRate" type="number" step="0.01" min="0"/>
+    </div>
+    <div>
+      <form:label path="playerLongShotRate">3-point shot rate:</form:label>
+      <form:input path="playerLongShotRate" type="number" step="0.01" min="0"/>
+    </div>
     <div class="form-group">
       <form:label path="playerTeam">Team:</form:label>
       <form:select path="playerTeam" class="form-control">

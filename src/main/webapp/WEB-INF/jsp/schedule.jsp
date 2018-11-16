@@ -31,10 +31,10 @@
           </tr>
           </thead>
           <tbody>
-          <c:forEach items="${teams}" var="team">
+          <c:forEach items="${conference.getConferenceTeams()}" var="team">
             <c:if test="${team.teamConference.conferenceId == conference.conferenceId}">
               <tr>
-                <td scope="row">#N</td>
+                <td scope="row">${conference.getConferenceTeams().indexOf(team) + 1}</td>
                 <td scope="row"><a href="/team?id=${team.teamId}">${team.teamTitle}</a></td>
                 <td scope="row">#P</td>
                 <td scope="row">G</td>

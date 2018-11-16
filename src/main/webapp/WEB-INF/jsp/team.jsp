@@ -10,16 +10,17 @@
 </head>
 <body>
 <p class="text-center">Team info</p>
-
+<a class="btn btn-success" href="/schedule" role="button">Back to schedule</a>
 <form:form method="post" modelAttribute="teamAttribute">
   <div class="form-group">
-    <form:label path="teamTitle">${teamAttribute.teamTitle}</form:label>
-    <form:input path="teamTitle" type="text"/>
-    <form:label path="teamCity">${teamAttribute.teamCity}</form:label>
-    <form:input path="teamCity" type="text"/>
-
-    <%--<button type="submit" class="btn btn-success">Save</button>--%>
-    <a class="btn btn-success" href="/schedule" role="button">Back to schedule</a>
+    <div>
+      <form:label path="teamTitle">Title:</form:label>
+      <form:input path="teamTitle" type="text"/>
+    </div>
+    <div>
+      <form:label path="teamCity">City:</form:label>
+      <form:input path="teamCity" type="text"/>
+    </div>
   </div>
 </form:form>
 

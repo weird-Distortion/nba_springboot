@@ -4,6 +4,7 @@ import com.homesoft.springboot.nba_springboot.dao.ConferenceDAO;
 import com.homesoft.springboot.nba_springboot.dao.DivisionDAO;
 import com.homesoft.springboot.nba_springboot.dao.PlayerDAO;
 import com.homesoft.springboot.nba_springboot.dao.TeamDAO;
+import com.homesoft.springboot.nba_springboot.model.Conference;
 import com.homesoft.springboot.nba_springboot.model.Player;
 import com.homesoft.springboot.nba_springboot.model.Team;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,9 +31,7 @@ public class TeamController {
 
     @RequestMapping(value = "/schedule", method = RequestMethod.GET)
     public String showSchedule(ModelMap model) {
-
         model.put("conferences", conferenceDAO.findAll());
-        model.put("teams", teamDAO.findAll());
         return "schedule";
     }
 

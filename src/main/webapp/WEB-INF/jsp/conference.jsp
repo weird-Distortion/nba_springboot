@@ -52,7 +52,7 @@
   <div class="row">
     <c:forEach items="${divisions}" var="division">
       <div class="col-sm-4">
-        <div>${division.divisionTitle}</div>
+        <div>${division.divisionTitle} division</div>
         <table class="table">
           <thead class="thead-dark">
           <tr>

@@ -21,7 +21,6 @@ public class ConferenceController {
 
     @RequestMapping(value = "/new-conference", method = RequestMethod.GET)
     public String addNewConference(ModelMap model) {
-
         model.addAttribute("conference", new Conference());
         return "new-conference";
     }
