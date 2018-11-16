@@ -5,7 +5,7 @@
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
   <meta charset="UTF-8">
-  <conferenceTitle>NBA championship</conferenceTitle>
+  <h2>NBA championship</h2>
 </head>
 <body>
 <p class="text-center">Regular season</p>
@@ -36,11 +36,11 @@
               <tr>
                 <td scope="row">${conference.getConferenceTeams().indexOf(team) + 1}</td>
                 <td scope="row"><a href="/team?id=${team.teamId}">${team.teamTitle}</a></td>
-                <td scope="row">#P</td>
-                <td scope="row">G</td>
-                <td scope="row">#W</td>
-                <td scope="row">#L</td>
-                <td scope="row">#%</td>
+                <td scope="row">${team.teamPlayers.size()}</td>
+                <td scope="row">${team.gamesPlayed}</td>
+                <td scope="row">${team.teamWin}</td>
+                <td scope="row">${team.teamLose}</td>
+                <td scope="row">${team.teamWinrate}</td>
               </tr>
             </c:if>
           </c:forEach>

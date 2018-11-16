@@ -6,7 +6,7 @@
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
   <meta charset="UTF-8">
-  <conferenceTitle>NBA championship</conferenceTitle>
+  <h2>NBA championship</h2>
 </head>
 <body>
 <p class="text-center">Add new team</p>
@@ -21,7 +21,7 @@
     <div class="form-group">
       <form:label path="teamConference">Select conference:</form:label>
       <form:select path="teamConference" class="form-control">
-          <form:options items="${conference}" itemLabel="conferenceTitle"/>
+          <form:options items="${conferences}" itemLabel="conferenceTitle"/>
       </form:select>
     </div>
 

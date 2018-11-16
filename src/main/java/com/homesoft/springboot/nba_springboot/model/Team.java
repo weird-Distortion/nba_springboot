@@ -15,6 +15,18 @@ public class Team {
     @Column
     private String teamCity;
 
+    @Column(columnDefinition="Decimal(10,0) default '0'")
+    private int gamesPlayed;
+
+    @Column(columnDefinition="Decimal(10,0) default '0'")
+    private int teamWin;
+
+    @Column(columnDefinition="Decimal(10,0) default '0'")
+    private int teamLose;
+
+    @Column(columnDefinition="Decimal(10,2) default '0.00'")
+    private double teamWinrate;
+
     @ManyToOne
     @JoinColumn(name = "conferenceId", nullable = false)
     private Conference teamConference;
@@ -50,6 +62,38 @@ public class Team {
 
     public void setTeamCity(String teamCity) {
         this.teamCity = teamCity;
+    }
+
+    public int getGamesPlayed() {
+        return gamesPlayed;
+    }
+
+    public void setGamesPlayed(int gamesPlayed) {
+        this.gamesPlayed = gamesPlayed;
+    }
+
+    public int getTeamWin() {
+        return teamWin;
+    }
+
+    public void setTeamWin(int teamWin) {
+        this.teamWin = teamWin;
+    }
+
+    public int getTeamLose() {
+        return teamLose;
+    }
+
+    public void setTeamLose(int teamLose) {
+        this.teamLose = teamLose;
+    }
+
+    public double getTeamWinrate() {
+        return teamWinrate;
+    }
+
+    public void setTeamWinrate(double teamWinrate) {
+        this.teamWinrate = teamWinrate;
     }
 
     public Conference getTeamConference() {

@@ -26,9 +26,6 @@ public class TeamController {
     @Autowired
     private DivisionDAO divisionDAO;
 
-    @Autowired
-    private PlayerDAO playerDAO;
-
     @RequestMapping(value = "/schedule", method = RequestMethod.GET)
     public String showSchedule(ModelMap model) {
         model.put("conferences", conferenceDAO.findAll());
@@ -37,7 +34,7 @@ public class TeamController {
 
     @RequestMapping(value = "/new-team", method = RequestMethod.GET)
     public String addNewTeam(ModelMap model) {
-        model.addAttribute("conference", conferenceDAO.findAll());
+        model.addAttribute("conferences", conferenceDAO.findAll());
         model.addAttribute("division", divisionDAO.findAll());
         model.addAttribute("team", new Team());
         return "new-team";
