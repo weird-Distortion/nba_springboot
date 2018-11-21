@@ -13,6 +13,7 @@
 <a class="btn btn-primary" href="/new-team">Add team</a>
 <a class="btn btn-primary" href="/new-division">Add division</a>
 <a class="btn btn-primary" href="/new-conference">Add conference</a>
+<button class="btn btn-warning" type="button">Autofill</button>
 <div class="container">
   <div class="row">
     <c:forEach items="${conferences}" var="conference">
@@ -49,6 +50,7 @@
       </div>
     </c:forEach>
   </div>
+  <button class="btn btn-success" type="button">Play regular season</button>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

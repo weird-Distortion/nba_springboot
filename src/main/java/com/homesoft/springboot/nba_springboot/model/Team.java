@@ -15,17 +15,14 @@ public class Team {
     @Column
     private String teamCity;
 
-    @Column(columnDefinition="Decimal(10,0) default '0'")
+    @Column(columnDefinition = "Decimal(10,0) default '0'")
     private int gamesPlayed;
 
-    @Column(columnDefinition="Decimal(10,0) default '0'")
+    @Column(columnDefinition = "Decimal(10,0) default '0'")
     private int teamWin;
 
-    @Column(columnDefinition="Decimal(10,0) default '0'")
+    @Column(columnDefinition = "Decimal(10,0) default '0'")
     private int teamLose;
-
-    @Column(columnDefinition="Decimal(10,2) default '0.00'")
-    private double teamWinrate;
 
     @ManyToOne
     @JoinColumn(name = "conferenceId", nullable = false)
@@ -38,7 +35,9 @@ public class Team {
     @OneToMany(mappedBy = "playerTeam")
     private List<Player> teamPlayers;
 
-    public Team() { super(); }
+    public Team() {
+        super();
+    }
 
     public void setTeamId(int teamId) {
         this.teamId = teamId;
@@ -89,11 +88,12 @@ public class Team {
     }
 
     public double getTeamWinrate() {
-        return teamWinrate;
-    }
+        if (this.gamesPlayed == 0) return 0.0;
 
-    public void setTeamWinrate(double teamWinrate) {
-        this.teamWinrate = teamWinrate;
+        return Math.round(
+                ((Double.parseDouble(String.valueOf(this.teamWin)) /
+                        Double.parseDouble(String.valueOf(this.gamesPlayed)))) * 100 * 100d
+        ) / 100d;
     }
 
     public Conference getTeamConference() {
