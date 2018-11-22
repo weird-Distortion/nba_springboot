@@ -33,6 +33,18 @@
     <label for="conferenceDiv">Conference:</label>
     <input type="text" value="${conference.conferenceTitle}" id="conferenceDiv" readonly>
   </div>
+  <div>
+    <label for="attackRateDiv">Team attack rate:</label>
+    <input type="number" value="${teamAttribute.getTeamAttackRate()}" id="attackRateDiv" readonly>
+  </div>
+  <div>
+    <label for="defenceRateDiv">Team defence rate:</label>
+    <input type="number" value="${teamAttribute.getTeamDefenceRate()}" id="defenceRateDiv" readonly>
+  </div>
+  <div>
+    <label for="threePointRateDiv">Team three point rate:</label>
+    <input type="number" value="${teamAttribute.getTeamThreePointRate()}" id="threePointRateDiv" readonly>
+  </div>
 </div>
 
 <div class="container">
@@ -56,7 +68,7 @@
                     href="/player?id=${player.playerId}">${player.playerFirstName} ${player.playerLastName}</a></td>
             <td scope="row">${player.playerAttackRate}</td>
             <td scope="row">${player.playerDefenceRate}</td>
-            <td scope="row">${player.playerLongShotRate}</td>
+            <td scope="row">${player.playerThreePointRate}</td>
           </tr>
         </c:forEach>
         </tbody>

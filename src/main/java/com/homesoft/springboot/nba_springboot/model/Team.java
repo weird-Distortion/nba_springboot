@@ -96,9 +96,39 @@ public class Team {
         ) / 100d;
     }
 
+    //---------------------------------------------------------------------------------
+    /**
+     * RATE METHODS. to check
+     * @return
+     */
+    public double getTeamAttackRate() {
+        if (teamPlayers.size() == 0) return 0.0;
+
+        return Math.round(
+                teamPlayers.stream().mapToDouble(Player::getPlayerAttackRate).sum() / teamPlayers.size() * 100d
+        ) / 100d;
+    }
+
+    public double getTeamDefenceRate() {
+        if (teamPlayers.size() == 0) return 0.0;
+
+        return Math.round(
+                teamPlayers.stream().mapToDouble(Player::getPlayerDefenceRate).sum() / teamPlayers.size()* 100d
+        ) / 100d;
+    }
+
+    public double getTeamThreePointRate() {
+        if (teamPlayers.size() == 0) return 0.0;
+
+        return Math.round(
+                teamPlayers.stream().mapToDouble(Player::getPlayerThreePointRate).sum() / teamPlayers.size()* 100d
+        ) / 100d;
+    }
+
     public Conference getTeamConference() {
         return teamConference;
     }
+    //------------------------------------------------
 
     public void setTeamConference(Conference teamConference) {
         this.teamConference = teamConference;

@@ -23,8 +23,8 @@
     <form:input path="playerAttackRate" type="number" step="0.01" min="0"/>
     <form:label path="playerDefenceRate">Defence rate</form:label>
     <form:input path="playerDefenceRate" type="number" step="0.01" min="0"/>
-    <form:label path="playerLongShotRate">3-point rate</form:label>
-    <form:input path="playerLongShotRate" type="number" step="0.01" min="0"/>
+    <form:label path="playerThreePointRate">3-point rate</form:label>
+    <form:input path="playerThreePointRate" type="number" step="0.01" min="0"/>
 
     <div class="form-group">
       <form:label path="playerTeam">Select team:</form:label>

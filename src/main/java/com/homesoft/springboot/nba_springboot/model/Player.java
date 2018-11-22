@@ -24,7 +24,7 @@ public class Player {
     private double playerDefenceRate;
 
     @Column
-    private double playerLongShotRate;
+    private double playerThreePointRate;
 
     @ManyToOne
     @JoinColumn(name = "teamId", nullable = false)
@@ -82,12 +82,12 @@ public class Player {
         this.playerDefenceRate = playerDefenceRate;
     }
 
-    public double getPlayerLongShotRate() {
-        return playerLongShotRate;
+    public double getPlayerThreePointRate() {
+        return playerThreePointRate;
     }
 
-    public void setPlayerLongShotRate(double playerLongShotRate) {
-        this.playerLongShotRate = playerLongShotRate;
+    public void setPlayerThreePointRate(double playerThreePointRate) {
+        this.playerThreePointRate = playerThreePointRate;
     }
 
     public Team getPlayerTeam() {
