@@ -72,7 +72,7 @@ public class RegularSeasonGameService implements GameService {
             Random random = new Random();
             result += 2;
             double threePointChance = (random.nextInt(5) + 1) + team.getTeamThreePointRate();
-            if (threePointChance >= 6) result++;
+            if (threePointChance >= 5.2) result++;
         }
 
         return result;
