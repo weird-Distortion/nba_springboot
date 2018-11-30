@@ -43,6 +43,9 @@ public class RegularSeasonGameService implements GameService {
 
         teamUpdateService.updateTeam(teamA, teamA.getGamesPlayed(), teamA.getTeamWin(), teamA.getTeamLose(), teamA.getTeamId());
         teamUpdateService.updateTeam(teamB, teamB.getGamesPlayed(), teamB.getTeamWin(), teamB.getTeamLose(), teamB.getTeamId());
+
+        scoreTeamA = 0;
+        scoreTeamB = 0;
     }
 
     public void doShots(Team teamA, Team teamB) {
