@@ -1,4 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html>
 <head>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
@@ -15,6 +16,7 @@
 <a class="btn btn-primary" href="/new-conference">Add conference</a>
 <button class="btn btn-warning" type="button">Autofill</button>
 <div class="container">
+  <form:form method="post" modelAttribute="conf">
   <div class="row">
     <c:forEach items="${conferences}" var="conference">
       <div class="col-sm">
@@ -50,7 +52,8 @@
       </div>
     </c:forEach>
   </div>
-  <button class="btn btn-success" type="button">Play regular season</button>
+  <button class="btn btn-success" type="submit">Play regular season</button>
+  </form:form>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

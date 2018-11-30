@@ -11,7 +11,7 @@
 <body>
 <p class="text-center">Team info</p>
 <a class="btn btn-success" href="/schedule" role="button">Back to schedule</a>
-<form:form method="post" modelAttribute="teamAttribute">
+<form:form method="post" modelAttribute="team">
   <div class="form-group">
     <div>
       <form:label path="teamTitle">Title:</form:label>
@@ -35,15 +35,15 @@
   </div>
   <div>
     <label for="attackRateDiv">Team attack rate:</label>
-    <input type="number" value="${teamAttribute.getTeamAttackRate()}" id="attackRateDiv" readonly>
+    <input type="number" value="${team.getTeamAttackRate()}" id="attackRateDiv" readonly>
   </div>
   <div>
     <label for="defenceRateDiv">Team defence rate:</label>
-    <input type="number" value="${teamAttribute.getTeamDefenceRate()}" id="defenceRateDiv" readonly>
+    <input type="number" value="${team.getTeamDefenceRate()}" id="defenceRateDiv" readonly>
   </div>
   <div>
     <label for="threePointRateDiv">Team three point rate:</label>
-    <input type="number" value="${teamAttribute.getTeamThreePointRate()}" id="threePointRateDiv" readonly>
+    <input type="number" value="${team.getTeamThreePointRate()}" id="threePointRateDiv" readonly>
   </div>
 </div>
 
