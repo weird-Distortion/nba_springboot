@@ -1,6 +1,6 @@
 package com.homesoft.springboot.nba_springboot.model;
 
-import com.homesoft.springboot.nba_springboot.dao.ConferenceDAO;
+import com.homesoft.springboot.nba_springboot.dao.DivisionDAO;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -13,27 +13,30 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(SpringRunner.class)
 @DataJpaTest
-public class ConferenceTest {
+public class DivisionTest {
 
     @Autowired
     private TestEntityManager testEntityManager;
 
     @Autowired
-    private ConferenceDAO conferenceDAO;
+    private DivisionDAO divisionDAO;
 
-    private Conference testConference;
+    private Division testDivision;
 
     @Before
     public void setUp() throws Exception {
-        testConference = new Conference();
-        testConference.setConferenceTitle("testConference");
+        Conference testConference = new Conference();
+        testDivision = new Division();
+        testDivision.setDivisionTitle("testDivisionTitle");
+        testDivision.setDivisionConference(testConference);
         testEntityManager.persistAndFlush(testConference);
+        testEntityManager.persistAndFlush(testDivision);
     }
 
     @Test
-    public void whenFindByConferenceName_returnConference() {
-        Conference foundConference = conferenceDAO.findByConferenceTitle(testConference.getConferenceTitle());
+    public void findByDivisionTitle_returnDivision() {
+        Division foundDivision = divisionDAO.findByDivisionTitle(testDivision.getDivisionTitle());
 
-        assertThat(foundConference.getConferenceTitle()).isEqualTo(testConference.getConferenceTitle());
+        assertThat(foundDivision.getDivisionTitle()).isEqualTo(testDivision.getDivisionTitle());
     }
 }

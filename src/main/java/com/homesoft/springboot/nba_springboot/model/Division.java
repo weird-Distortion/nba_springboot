@@ -7,7 +7,7 @@ import java.util.List;
 public class Division {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int divisionId;
 
     @Column
