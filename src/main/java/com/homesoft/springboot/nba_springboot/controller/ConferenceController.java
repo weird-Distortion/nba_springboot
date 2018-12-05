@@ -1,8 +1,7 @@
 package com.homesoft.springboot.nba_springboot.controller;
 
-import com.homesoft.springboot.nba_springboot.dao.ConferenceDAO;
-import com.homesoft.springboot.nba_springboot.dao.TeamDAO;
 import com.homesoft.springboot.nba_springboot.model.Conference;
+import com.homesoft.springboot.nba_springboot.service.ConferenceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -14,10 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class ConferenceController {
 
     @Autowired
-    private ConferenceDAO conferenceDAO;
-
-    @Autowired
-    private TeamDAO teamDAO;
+    private ConferenceService conferenceService;
 
     @RequestMapping(value = "/new-conference", method = RequestMethod.GET)
     public String addNewConference(ModelMap model) {
@@ -27,13 +23,13 @@ public class ConferenceController {
 
     @RequestMapping(value = "/new-conference", method = RequestMethod.POST)
     public String addConference(ModelMap model, Conference newConference) {
-        conferenceDAO.save(newConference);
+        conferenceService.persistConference(newConference);
         return "redirect:/schedule";
     }
 
     @RequestMapping(value = "/conference", method = RequestMethod.GET)
     public String showConferenceInfo(ModelMap model, @RequestParam int id) {
-        Conference conference = conferenceDAO.findById(id).get();
+        Conference conference = conferenceService.getConferenceById(id);
         model.addAttribute("conferenceAttribute", conference);
         model.put("conference", conference);
         model.put("teams", conference.getConferenceTeams());
