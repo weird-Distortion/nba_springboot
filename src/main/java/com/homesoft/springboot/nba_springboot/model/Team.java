@@ -6,7 +6,7 @@ import java.util.List;
 @Entity
 public class Team {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int teamId;
 
     @Column
@@ -128,7 +128,6 @@ public class Team {
     public Conference getTeamConference() {
         return teamConference;
     }
-    //------------------------------------------------
 
     public void setTeamConference(Conference teamConference) {
         this.teamConference = teamConference;
