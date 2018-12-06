@@ -28,4 +28,8 @@ public class PlayerService {
     public void removePlayerById(int id) {
         playerDAO.deleteById(id);
     }
+
+    public Player createPlayer() {
+        return new Player();
+    }
 }

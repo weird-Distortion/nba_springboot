@@ -20,15 +20,15 @@ public class PlayerController implements NbaController {
     private PlayerService playerService;
 
     @RequestMapping(value = "/new-player", method = RequestMethod.GET)
-    public String addNewPlayer(ModelMap model) {
+    public String showAddNewPlayerPage(ModelMap model) {
 
-        model.addAttribute("newPlayer", new Player());
+        model.addAttribute("newPlayer", playerService.createPlayer());
         model.addAttribute("team", teamService.findAllTeams());
         return "new-player";
     }
 
     @RequestMapping(value = "/new-player", method = RequestMethod.POST)
-    public String addPlayer(ModelMap model, Player newPlayer) {
+    public String addNewPlayer(ModelMap model, Player newPlayer) {
         playerService.persistPlayer(newPlayer);
         return "redirect:/schedule";
     }
@@ -42,7 +42,7 @@ public class PlayerController implements NbaController {
     }
 
     @RequestMapping(value = "/player", method = RequestMethod.POST)
-    public String savePlayer(Player player, @RequestParam int id) {
+    public String mergePlayer(Player player, @RequestParam int id) {
         playerService.removePlayerById(id);
         playerService.persistPlayer(player);
         return "redirect:/schedule";
