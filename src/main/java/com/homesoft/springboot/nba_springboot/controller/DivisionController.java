@@ -23,9 +23,9 @@ public class DivisionController implements NbaController {
     private ConferenceService conferenceService;
 
     @RequestMapping(value = "/new-division", method = RequestMethod.GET)
-    public String addNewDivision(ModelMap model) {
+    public String showNewDivisionPage(ModelMap model) {
 
-        model.addAttribute("division", new Division());
+        model.addAttribute("division", divisionService.createNewDivision());
         model.addAttribute("conference", conferenceService.findAllConferences());
         model.addAttribute("team", teamService.findAllTeams());
         return "new-division";

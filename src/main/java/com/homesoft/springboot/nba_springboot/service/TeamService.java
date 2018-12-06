@@ -24,4 +24,8 @@ public class TeamService {
     public List<Team> findAllTeams() {
         return teamDAO.findAll();
     }
+
+    public Team createTeam() {
+        return new Team();
+    }
 }

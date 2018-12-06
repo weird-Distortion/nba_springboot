@@ -20,4 +20,8 @@ public class DivisionService {
     public List<Division> findAllDivisions() {
         return divisionDAO.findAll();
     }
+
+    public Division createNewDivision() {
+        return new Division();
+    }
 }

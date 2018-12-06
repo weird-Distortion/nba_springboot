@@ -6,13 +6,10 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
-import org.mockito.MockitoAnnotations;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import java.util.Collections;
 
@@ -56,8 +53,6 @@ public class ConferenceControllerTest {
 
     @Test
     public void addConference_ShouldAddNewConferenceAndRedirectToSchedule() throws Exception {
-        Conference testConference = new Conference();
-
         mockMvc.perform(post("/new-conference")
                 .param("conferenceTitle", "testConferenceTitle"))
                 .andExpect(view().name("redirect:" + "/schedule"))

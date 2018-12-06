@@ -24,10 +24,10 @@ public class TeamController implements NbaController {
     private DivisionService divisionService;
 
     @RequestMapping(value = "/new-team", method = RequestMethod.GET)
-    public String addNewTeam(ModelMap model) {
+    public String showNewTeamPage(ModelMap model) {
         model.addAttribute("conferences", conferenceService.findAllConferences());
         model.addAttribute("division", divisionService.findAllDivisions());
-        model.addAttribute("team", new Team());
+        model.addAttribute("team", teamService.createTeam());
         return "new-team";
     }
 
