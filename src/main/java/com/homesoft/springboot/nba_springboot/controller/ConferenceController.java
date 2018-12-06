@@ -5,9 +5,7 @@ import com.homesoft.springboot.nba_springboot.service.ConferenceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class ConferenceController {
@@ -16,8 +14,9 @@ public class ConferenceController {
     private ConferenceService conferenceService;
 
     @RequestMapping(value = "/new-conference", method = RequestMethod.GET)
-    public String addNewConference(ModelMap model) {
-        model.addAttribute("conference", new Conference());
+    public String showNewConferencePage(ModelMap model) {
+//        model.addAttribute("conference", new Conference());
+        model.addAttribute("conference", conferenceService.createNewConference());
         return "new-conference";
     }
 

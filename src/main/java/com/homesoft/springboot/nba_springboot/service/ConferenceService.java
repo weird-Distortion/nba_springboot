@@ -24,4 +24,8 @@ public class ConferenceService {
     public void persistConference(Conference conference) {
         conferenceDAO.save(conference);
     }
+
+    public Conference createNewConference() {
+        return new Conference();
+    }
 }
