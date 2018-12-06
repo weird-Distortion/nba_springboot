@@ -16,7 +16,6 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import java.util.Collections;
 
-import static org.hamcrest.Matchers.hasProperty;
 import static org.hamcrest.Matchers.is;
 import static org.mockito.BDDMockito.given;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -37,16 +36,8 @@ public class ConferenceControllerTest {
 
     @Before
     public void setUp() {
-        InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
-        viewResolver.setPrefix("/WEB-INF/jsp/");
-        viewResolver.setSuffix(".jsp");
-
-        MockitoAnnotations.initMocks(this);
-        mockMvc =
-                MockMvcBuilders
-                        .standaloneSetup(conferenceController)
-                        .setViewResolvers(viewResolver)
-                        .build();
+        SetupTestService setupTestService = new SetupTestService();
+        mockMvc = setupTestService.defaultSetup(this, mockMvc, conferenceController);
     }
 
     @Test

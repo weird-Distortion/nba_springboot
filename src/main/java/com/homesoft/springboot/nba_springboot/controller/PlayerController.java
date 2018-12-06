@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-public class PlayerController {
+public class PlayerController implements NbaController {
 
     @Autowired
     private TeamService teamService;

@@ -8,14 +8,13 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
-public class ConferenceController {
+public class ConferenceController implements NbaController{
 
     @Autowired
     private ConferenceService conferenceService;
 
     @RequestMapping(value = "/new-conference", method = RequestMethod.GET)
     public String showNewConferencePage(ModelMap model) {
-//        model.addAttribute("conference", new Conference());
         model.addAttribute("conference", conferenceService.createNewConference());
         return "new-conference";
     }
