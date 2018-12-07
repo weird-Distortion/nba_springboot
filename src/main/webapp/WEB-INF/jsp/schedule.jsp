@@ -14,7 +14,7 @@
 <a class="btn btn-primary" href="/new-team">Add team</a>
 <a class="btn btn-primary" href="/new-division">Add division</a>
 <a class="btn btn-primary" href="/new-conference">Add conference</a>
-<button class="btn btn-warning" type="button">Autofill</button>
+<a class="btn btn-warning" href="/autofill">Autofill</a>
 <div class="container">
   <form:form method="post" modelAttribute="conf">
   <div class="row">

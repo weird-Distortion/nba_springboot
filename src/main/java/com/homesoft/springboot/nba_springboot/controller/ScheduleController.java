@@ -1,5 +1,6 @@
 package com.homesoft.springboot.nba_springboot.controller;
 
+import com.homesoft.springboot.nba_springboot.service.AutofillButtonService;
 import com.homesoft.springboot.nba_springboot.service.ConferenceService;
 import com.homesoft.springboot.nba_springboot.service.RegularSeason;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +20,6 @@ public class ScheduleController implements NbaController {
 
     @RequestMapping(value = "/schedule", method = RequestMethod.GET)
     public String showSchedule(ModelMap model) {
-//        model.put("conferences", conferenceService.findAllConferences());
         model.addAttribute("conferences", conferenceService.findAllConferences());
         return "schedule";
     }

@@ -1,0 +1,12 @@
+/home/distortion/projects/java/nba_springboot/src/test/java/com/homesoft/springboot/nba_springboot/controller/ScheduleControllerTest.java
+/home/distortion/projects/java/nba_springboot/src/test/java/com/homesoft/springboot/nba_springboot/controller/ConferenceControllerTest.java
+/home/distortion/projects/java/nba_springboot/src/test/java/com/homesoft/springboot/nba_springboot/controller/DivisionControllerTest.java
+/home/distortion/projects/java/nba_springboot/src/test/java/com/homesoft/springboot/nba_springboot/controller/PlayerControllerTest.java
+/home/distortion/projects/java/nba_springboot/src/test/java/com/homesoft/springboot/nba_springboot/model/TeamTest.java
+/home/distortion/projects/java/nba_springboot/src/test/java/com/homesoft/springboot/nba_springboot/model/ConferenceTest.java
+/home/distortion/projects/java/nba_springboot/src/test/java/com/homesoft/springboot/nba_springboot/model/PlayerTest.java
+/home/distortion/projects/java/nba_springboot/src/test/java/com/homesoft/springboot/nba_springboot/controller/SetupTestService.java
+/home/distortion/projects/java/nba_springboot/src/test/java/com/homesoft/springboot/nba_springboot/NbaSpringbootApplicationTests.java
+/home/distortion/projects/java/nba_springboot/src/test/java/com/homesoft/springboot/nba_springboot/controller/TeamControllerTest.java
+/home/distortion/projects/java/nba_springboot/src/test/java/com/homesoft/springboot/nba_springboot/model/DivisionTest.java
+/home/distortion/projects/java/nba_springboot/src/test/java/com/homesoft/springboot/nba_springboot/service/GameLogicTest.java

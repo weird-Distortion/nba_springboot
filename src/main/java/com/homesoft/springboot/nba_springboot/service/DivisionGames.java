@@ -17,7 +17,6 @@ public class DivisionGames {
 
         assert division != null;
         int counter = 0;
-        System.out.println(regularSeasonGameService.toString() + " GAME SERVICE IS NOT NULL!!!!!!   ");
         while (counter < division.getDivisionTeams().size() - 1) {
             division.getDivisionTeams()
                     .forEach(teamA ->
