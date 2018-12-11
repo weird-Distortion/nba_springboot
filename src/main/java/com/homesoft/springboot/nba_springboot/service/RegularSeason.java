@@ -16,14 +16,19 @@ public class RegularSeason {
     @Autowired
     private CrossConferenceGames crossConferenceGames;
 
-    public RegularSeason() {}
+    public RegularSeason() {
+    }
 
     public void playRegularSeasonGames(Conference east, Conference west) {
-        serveDivisionGames(east);
-        serveDivisionGames(west);
-        crossDivisionGames.playCrossDivisionGames(east.getConferenceDivisions());
-        crossDivisionGames.playCrossDivisionGames(west.getConferenceDivisions());
-        crossConferenceGames.playCrossConfGames(east, west);
+
+        if (west.getConferenceTeams().size() == 15 &&
+                east.getConferenceTeams().size() == 15) {
+            serveDivisionGames(east);
+            serveDivisionGames(west);
+            crossDivisionGames.playCrossDivisionGames(east.getConferenceDivisions());
+            crossDivisionGames.playCrossDivisionGames(west.getConferenceDivisions());
+            crossConferenceGames.playCrossConfGames(east, west);
+        }
     }
 
     private void serveDivisionGames(Conference conference) {

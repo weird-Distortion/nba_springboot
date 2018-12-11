@@ -1,21 +1,49 @@
 package com.homesoft.springboot.nba_springboot.service;
 
+import com.homesoft.springboot.nba_springboot.dao.ConferenceDAO;
+import com.homesoft.springboot.nba_springboot.dao.DivisionDAO;
+import com.homesoft.springboot.nba_springboot.dao.PlayerDAO;
+import com.homesoft.springboot.nba_springboot.dao.TeamDAO;
+import com.homesoft.springboot.nba_springboot.model.Team;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcOperations;
 import org.springframework.stereotype.Service;
 
 @Service
-public class AutofillButtonService {
+public class AutoDataService {
 
     @Autowired
     private JdbcOperations jdbcOperations;
 
+    @Autowired
+    private TeamUpdateService teamUpdateService;
+
+    @Autowired
+    private PlayerDAO playerDAO;
+
+    @Autowired
+    private TeamDAO teamDAO;
+
+    @Autowired
+    private DivisionDAO divisionDAO;
+
+    @Autowired
+    private ConferenceDAO conferenceDAO;
+
+    public void clearTable() {
+        playerDAO.deleteAll();
+        teamDAO.deleteAll();
+        divisionDAO.deleteAll();
+        conferenceDAO.deleteAll();
+    }
+
+    public void resetSeasonResults() {
+        teamDAO.findAll().forEach(team -> teamUpdateService.updateTeam(team, 0, 0, 0, team.getTeamId()));
+    }
+
     public void autofillTable() {
+        clearTable();
         jdbcOperations.update(
-                "DELETE FROM PLAYER;" +
-                        "DELETE FROM TEAM;" +
-                        "DELETE FROM DIVISION;" +
-                        "DELETE FROM CONFERENCE;" +
                         "INSERT INTO CONFERENCE (CONFERENCE_ID, CONFERENCE_TITLE) VALUES (1, 'West');" +
                         "INSERT INTO CONFERENCE (CONFERENCE_ID, CONFERENCE_TITLE) VALUES (2, 'East');" +
                         "INSERT INTO DIVISION (DIVISION_ID, DIVISION_TITLE, CONFERENCE_ID) VALUES (1, 'Pacific', 1);" +

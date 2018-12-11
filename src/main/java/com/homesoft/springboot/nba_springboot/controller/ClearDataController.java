@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-public class AutofillController {
+public class ClearDataController {
 
     @Autowired
     private ConferenceService conferenceService;
@@ -17,16 +17,16 @@ public class AutofillController {
     @Autowired
     private AutoDataService autoDataService;
 
-    @RequestMapping(value = "/autofill", method = RequestMethod.GET)
-    public String showAutofillPage(ModelMap model) {
+    @RequestMapping(value = "/clear-data", method = RequestMethod.GET)
+    public String showClearDataPage(ModelMap model) {
         model.addAttribute("conferences", conferenceService.findAllConferences());
 
-        return "autofill";
+        return "clear-data";
     }
 
-    @RequestMapping(value = "/autofill", method = RequestMethod.POST)
-    public String autofillTable(ModelMap model) {
-        autoDataService.autofillTable();
+    @RequestMapping(value = "/clear-data", method = RequestMethod.POST)
+    public String clearData(ModelMap model) {
+        autoDataService.clearTable();
         return "redirect:/schedule";
     }
 }

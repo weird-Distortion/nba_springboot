@@ -22,7 +22,8 @@ public class ConferenceService {
     }
 
     public void persistConference(Conference conference) {
-        conferenceDAO.save(conference);
+        if (conferenceDAO.findAll().size() < 2)
+            conferenceDAO.save(conference);
     }
 
     public Conference createNewConference() {

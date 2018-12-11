@@ -22,7 +22,11 @@ public class PlayerService {
     }
 
     public void persistPlayer(Player player) {
-        playerDAO.save(player);
+        if (player
+                .getPlayerTeam()
+                .getTeamPlayers()
+                .size() < 5)
+            playerDAO.save(player);
     }
 
     public void removePlayerById(int id) {

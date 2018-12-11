@@ -14,7 +14,11 @@ public class DivisionService {
     private DivisionDAO divisionDAO;
 
     public void persistDivision(Division division) {
-        divisionDAO.save(division);
+        if (division
+                .getDivisionConference()
+                .getConferenceDivisions()
+                .size() < 3)
+            divisionDAO.save(division);
     }
 
     public List<Division> findAllDivisions() {

@@ -18,7 +18,11 @@ public class TeamService {
     }
 
     public void persistTeam(Team team) {
-        teamDAO.save(team);
+        if (team
+                .getTeamDivision()
+                .getDivisionTeams()
+                .size() < 5)
+            teamDAO.save(team);
     }
 
     public List<Team> findAllTeams() {

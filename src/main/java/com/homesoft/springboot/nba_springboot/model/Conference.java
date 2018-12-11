@@ -1,7 +1,6 @@
 package com.homesoft.springboot.nba_springboot.model;
 
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -48,11 +47,13 @@ public class Conference {
 
     /**
      * TODO: change this method to simple getter but implement sorting by Ajax
+     *
      * @return
      */
     public List<Team> getConferenceTeams() {
         return conferenceTeams.stream()
-                .sorted(Comparator.comparingInt(Team::getTeamWin).reversed())
+                .sorted(Comparator.comparingInt(Team::getTeamWin)
+                        .reversed())
                 .collect(Collectors.toList());
     }
 
