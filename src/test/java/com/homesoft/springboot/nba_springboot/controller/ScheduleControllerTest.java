@@ -58,21 +58,4 @@ public class ScheduleControllerTest {
                 .andExpect(model().attributeExists("conferences"))
                 .andExpect(model().attribute("conferences", is(allConferences)));
     }
-
-    @Test
-    public void playRegularSeason_ShouldReturnConferenceList() throws Exception {
-        Conference testConference1 = new Conference();
-        testConference1.setConferenceTeams(Collections.emptyList());
-
-        List<Conference> allConferences = List.of(testConference1);
-
-        given(conferenceService.findAllConferences()).willReturn(allConferences);
-
-        mockMvc.perform(post("/schedule"))
-                .andExpect(status().isOk())
-                .andExpect(view().name("schedule"))
-                .andExpect(forwardedUrl("/WEB-INF/jsp/schedule.jsp"))
-                .andExpect(model().attributeExists("conf"))
-                .andExpect(model().attribute("conf", is(allConferences)));
-    }
 }
