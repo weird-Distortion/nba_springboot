@@ -26,13 +26,13 @@
           <c:forEach items="${teams}" var="team">
             <c:if test="${team.teamConference.conferenceId == conference.conferenceId}">
               <tr>
-                <td scope="row">#N</td>
+                <td scope="row">${conferenceAttribute.getConferenceTeams().indexOf(team) + 1}</td>
                 <td scope="row"><a href="/team?id=${team.teamId}">${team.teamTitle}</a></td>
-                <td scope="row">#P</td>
-                <td scope="row">G</td>
-                <td scope="row">#W</td>
-                <td scope="row">#L</td>
-                <td scope="row">#%</td>
+                <td scope="row">${team.teamPlayers.size()}</td>
+                <td scope="row">${team.gamesPlayed}</td>
+                <td scope="row">${team.teamWin}</td>
+                <td scope="row">${team.teamLose}</td>
+                <td scope="row">${team.teamWinrate}</td>
               </tr>
             </c:if>
           </c:forEach>
@@ -62,12 +62,12 @@
             <c:forEach items="${teams}" var="team">
               <c:if test="${team.teamDivision.divisionId == division.divisionId}">
                 <tr>
-                  <td scope="row">#N</td>
+                  <td scope="row">${division.getSortedDivisionTeams().indexOf(team) + 1}</td>
                   <td scope="row"><a href="/team?id=${team.teamId}">${team.teamTitle}</a></td>
-                  <td scope="row">G</td>
-                  <td scope="row">#W</td>
-                  <td scope="row">#L</td>
-                  <td scope="row">#%</td>
+                  <td scope="row">${team.gamesPlayed}</td>
+                  <td scope="row">${team.teamWin}</td>
+                  <td scope="row">${team.teamLose}</td>
+                  <td scope="row">${team.teamWinrate}</td>
                 </tr>
               </c:if>
             </c:forEach>

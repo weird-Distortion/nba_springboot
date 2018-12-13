@@ -1,7 +1,9 @@
 package com.homesoft.springboot.nba_springboot.model;
 
 import javax.persistence.*;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Entity
 public class Division {
@@ -50,6 +52,18 @@ public class Division {
 
     public List<Team> getDivisionTeams() {
         return divisionTeams;
+    }
+
+    /**
+     * TODO: change this method to simple getter but implement sorting by Ajax
+     *
+     * @return
+     */
+    public List<Team> getSortedDivisionTeams() {
+        return divisionTeams.stream()
+                .sorted(Comparator.comparingInt(Team::getTeamWin)
+                        .reversed())
+                .collect(Collectors.toList());
     }
 
     public void setDivisionTeams(List<Team> divisionTeams) {
