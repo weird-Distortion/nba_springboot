@@ -22,11 +22,13 @@
 /home/distortion/projects/java/nba_springboot/src/main/java/com/homesoft/springboot/nba_springboot/service/GameService.java
 /home/distortion/projects/java/nba_springboot/src/main/java/com/homesoft/springboot/nba_springboot/model/Conference.java
 /home/distortion/projects/java/nba_springboot/src/main/java/com/homesoft/springboot/nba_springboot/service/RegularSeason.java
+/home/distortion/projects/java/nba_springboot/src/main/java/com/homesoft/springboot/nba_springboot/controller/FinalsController.java
 /home/distortion/projects/java/nba_springboot/src/main/java/com/homesoft/springboot/nba_springboot/service/DivisionGames.java
 /home/distortion/projects/java/nba_springboot/src/main/java/com/homesoft/springboot/nba_springboot/service/ConferenceService.java
 /home/distortion/projects/java/nba_springboot/src/main/java/com/homesoft/springboot/nba_springboot/controller/ClearDataController.java
 /home/distortion/projects/java/nba_springboot/src/main/java/com/homesoft/springboot/nba_springboot/dao/TeamDAO.java
 /home/distortion/projects/java/nba_springboot/src/main/java/com/homesoft/springboot/nba_springboot/service/GameLogic.java
 /home/distortion/projects/java/nba_springboot/src/main/java/com/homesoft/springboot/nba_springboot/controller/AutofillController.java
+/home/distortion/projects/java/nba_springboot/src/main/java/com/homesoft/springboot/nba_springboot/controller/PlayoffController.java
 /home/distortion/projects/java/nba_springboot/src/main/java/com/homesoft/springboot/nba_springboot/controller/PlayerController.java
 /home/distortion/projects/java/nba_springboot/src/main/java/com/homesoft/springboot/nba_springboot/controller/TeamController.java

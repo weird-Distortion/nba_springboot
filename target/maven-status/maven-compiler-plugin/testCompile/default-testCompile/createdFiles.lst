@@ -1,12 +1,12 @@
 com/homesoft/springboot/nba_springboot/controller/DivisionControllerTest.class
 com/homesoft/springboot/nba_springboot/model/TeamTest.class
 com/homesoft/springboot/nba_springboot/controller/PlayerControllerTest.class
+com/homesoft/springboot/nba_springboot/controller/ConferenceControllerTest.class
+com/homesoft/springboot/nba_springboot/model/PlayerTest.class
+com/homesoft/springboot/nba_springboot/service/GameLogicTest.class
 com/homesoft/springboot/nba_springboot/model/DivisionTest.class
 com/homesoft/springboot/nba_springboot/controller/TeamControllerTest.class
 com/homesoft/springboot/nba_springboot/controller/ScheduleControllerTest.class
-com/homesoft/springboot/nba_springboot/controller/ConferenceControllerTest.class
 com/homesoft/springboot/nba_springboot/NbaSpringbootApplicationTests.class
 com/homesoft/springboot/nba_springboot/model/ConferenceTest.class
-com/homesoft/springboot/nba_springboot/model/PlayerTest.class
-com/homesoft/springboot/nba_springboot/service/GameLogicTest.class
 com/homesoft/springboot/nba_springboot/controller/SetupTestService.class
