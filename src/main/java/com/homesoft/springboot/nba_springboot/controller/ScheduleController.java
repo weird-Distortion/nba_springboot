@@ -27,7 +27,7 @@ public class ScheduleController implements NbaController {
     public String playRegularSeason(ModelMap model) {
         if (conferenceService.findAllConferences().size() == 2) {
             regularSeason.playRegularSeasonGames(conferenceService.getConferenceById(1), conferenceService.getConferenceById(2));
-            model.addAttribute("conf", conferenceService.findAllConferences());
+//            model.addAttribute("conf", conferenceService.findAllConferences());
             model.put("conferences", conferenceService.findAllConferences());
         }
         return "schedule";

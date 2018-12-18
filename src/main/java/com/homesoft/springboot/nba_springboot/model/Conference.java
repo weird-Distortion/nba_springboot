@@ -57,6 +57,14 @@ public class Conference {
                 .collect(Collectors.toList());
     }
 
+    public List<Team> getConferencePlayoffTeams() {
+        return conferenceTeams.stream()
+                .sorted(Comparator.comparingInt(Team::getTeamWin)
+                        .reversed())
+                .limit(8)
+                .collect(Collectors.toList());
+    }
+
     public void setConferenceTeams(List<Team> conferenceTeams) {
         this.conferenceTeams = conferenceTeams;
     }
