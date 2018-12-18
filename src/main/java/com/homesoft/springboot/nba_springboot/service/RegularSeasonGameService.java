@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class RegularSeasonGameService implements GameService {
+public class RegularSeasonGameService {
 
     @Autowired
     private TeamUpdateService teamUpdateService;
@@ -13,7 +13,6 @@ public class RegularSeasonGameService implements GameService {
     @Autowired
     private GameLogic gameLogic;
 
-    @Override
     public void playMatch(Team teamA, Team teamB) {
 
         gameLogic.doShots(teamA, teamB);
