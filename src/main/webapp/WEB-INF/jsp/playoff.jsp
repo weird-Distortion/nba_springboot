@@ -30,21 +30,9 @@
       <div style="height: 100px; width: 150px; border: solid darkgreen">
         <div>${westTeams.get(4).getTeamTitle()}</div>
       </div>
-    </div>
 
-    <div class="col-sm-3" style="border: solid indigo">
-      <div style="height: 100px; width: 150px; border: solid darkgreen">
-        <div>${westWinner.getTeamTitle()}</div>
-      </div>
-    </div>
+      <div>------</div>
 
-    <div class="col-sm-3" style="border: solid indigo">
-      <div style="height: 100px; width: 150px; border: solid darkgreen">
-        <div>${eastWinner.getTeamTitle()}</div>
-      </div>
-    </div>
-
-    <div class="col-sm-3" style="border: solid indigo">
       <div style="height: 100px; width: 150px; border: solid darkgreen">
         <div>${eastTeams.get(0).getTeamTitle()}</div>
       </div>
@@ -68,6 +56,66 @@
       </div>
       <div style="height: 100px; width: 150px; border: solid darkgreen">
         <div>${eastTeams.get(4).getTeamTitle()}</div>
+      </div>
+    </div>
+
+    <div class="col-sm-3" style="border: solid indigo">
+      <div style="height: 100px; width: 150px; border: solid darkgreen">
+        <div>${westFirstRound.get(0).getTeamTitle()}</div>
+      </div>
+      <div style="height: 100px; width: 150px; border: solid darkgreen">
+        <div>${westFirstRound.get(1).getTeamTitle()}</div>
+      </div>
+      <div style="height: 100px; width: 150px; border: solid darkgreen">
+        <div>${westFirstRound.get(2).getTeamTitle()}</div>
+      </div>
+      <div style="height: 100px; width: 150px; border: solid darkgreen">
+        <div>${westFirstRound.get(3).getTeamTitle()}</div>
+      </div>
+
+      <div>-----</div>
+
+      <div style="height: 100px; width: 150px; border: solid darkgreen">
+        <div>${eastFirstRound.get(0).getTeamTitle()}</div>
+      </div>
+      <div style="height: 100px; width: 150px; border: solid darkgreen">
+        <div>${eastFirstRound.get(1).getTeamTitle()}</div>
+      </div>
+      <div style="height: 100px; width: 150px; border: solid darkgreen">
+        <div>${eastFirstRound.get(2).getTeamTitle()}</div>
+      </div>
+      <div style="height: 100px; width: 150px; border: solid darkgreen">
+        <div>${eastFirstRound.get(3).getTeamTitle()}</div>
+      </div>
+    </div>
+
+    <div class="col-sm-3" style="border: solid indigo">
+      <div style="height: 100px; width: 150px; border: solid darkgreen">
+        <div>${westSecondRound.get(0).getTeamTitle()}</div>
+      </div>
+      <div style="height: 100px; width: 150px; border: solid darkgreen">
+        <div>${westSecondRound.get(1).getTeamTitle()}</div>
+      </div>
+
+      <div>-----</div>
+
+      <div style="height: 100px; width: 150px; border: solid darkgreen">
+        <div>${eastSecondRound.get(0).getTeamTitle()}</div>
+      </div>
+      <div style="height: 100px; width: 150px; border: solid darkgreen">
+        <div>${eastSecondRound.get(1).getTeamTitle()}</div>
+      </div>
+    </div>
+
+    <div class="col-sm-3" style="border: solid indigo">
+      <div style="height: 100px; width: 150px; border: solid darkgreen">
+        <div>${westThirdRound.getTeamTitle()}</div>
+      </div>
+
+      <div>-----</div>
+
+      <div style="height: 100px; width: 150px; border: solid darkgreen">
+        <div>${eastThirdRound.getTeamTitle()}</div>
       </div>
     </div>
   </div>

@@ -25,10 +25,10 @@ public class PlayoffGameService {
             }
 
             if (gameLogic.getScoreTeamA() > gameLogic.getScoreTeamB()) {
-                teamA.setTeamWin(teamA.getTeamWin() + 1);
+//                teamA.setTeamWin(teamA.getTeamWin() + 1);
                 teamAWins++;
             } else {
-                teamB.setTeamWin(teamB.getTeamWin() + 1);
+//                teamB.setTeamWin(teamB.getTeamWin() + 1);
                 teamBWins++;
             }
 

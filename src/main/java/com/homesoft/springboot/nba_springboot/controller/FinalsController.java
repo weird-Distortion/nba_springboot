@@ -11,6 +11,8 @@ public class FinalsController {
     @RequestMapping(value = "/finals", method = RequestMethod.GET)
     public String showFinalsPage(ModelMap model) {
 
+        //TODO: add ConferenceWinner to Conference entity to display it on finals page
+
         return "finals";
     }
 }
