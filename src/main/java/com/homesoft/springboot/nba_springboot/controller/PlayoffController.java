@@ -7,12 +7,15 @@ import com.homesoft.springboot.nba_springboot.service.PlayoffService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import static java.util.Arrays.asList;
+
 @Controller
+@SessionAttributes("champs")
 public class PlayoffController {
 
     @Autowired
@@ -20,6 +23,11 @@ public class PlayoffController {
 
     @Autowired
     private PlayoffService playoffService;
+
+    @ModelAttribute("champs")
+    public List<Team> setUpUserForm() {
+        return new ArrayList<>();
+    }
 
     @RequestMapping(value = "/playoff", method = RequestMethod.GET)
     public String showPlayoffPage(ModelMap model) {
@@ -37,7 +45,9 @@ public class PlayoffController {
     }
 
     @RequestMapping(value = "/playoff", method = RequestMethod.POST)
-    public String playPlayoff(ModelMap model) {
+    public String playPlayoff(
+            @ModelAttribute("champs") List<Team> champList,
+            ModelMap model) {
         List<List<Team>> westSchedule =
                 playoffService
                         .makeConferenceSchedule(conferenceService
@@ -71,6 +81,8 @@ public class PlayoffController {
         model.addAttribute("eastSecondRound", eastSecondRound);
         model.addAttribute("westThirdRound", westThirdRound.get(0));
         model.addAttribute("eastThirdRound", eastThirdRound.get(0));
+
+        champList.addAll(asList(westThirdRound.get(0), eastThirdRound.get(0)));
 
         return "playoff";
     }

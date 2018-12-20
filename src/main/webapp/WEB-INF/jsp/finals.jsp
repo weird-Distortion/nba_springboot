@@ -6,12 +6,18 @@
 
   <div class="row">
     <div class="col-sm-4" style="border: solid indigo">
+      <div style="height: 100px; width: 150px; border: solid darkgreen">
+        <div>${champions.get(0).getTeamTitle()}</div>
+      </div>
     </div>
 
     <div class="col-sm-4" style="border: solid indigo">
     </div>
 
     <div class="col-sm-4" style="border: solid indigo">
+      <div style="height: 100px; width: 150px; border: solid darkgreen">
+        <div>${champions.get(1).getTeamTitle()}</div>
+      </div>
     </div>
   </div>
 </div>
