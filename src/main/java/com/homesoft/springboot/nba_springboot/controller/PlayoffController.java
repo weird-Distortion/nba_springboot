@@ -25,7 +25,7 @@ public class PlayoffController {
     private PlayoffService playoffService;
 
     @ModelAttribute("champs")
-    public List<Team> setUpUserForm() {
+    public List<Team> setUpChampList() {
         return new ArrayList<>();
     }
 

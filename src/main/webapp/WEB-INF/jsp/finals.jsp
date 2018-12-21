@@ -12,6 +12,9 @@
     </div>
 
     <div class="col-sm-4" style="border: solid indigo">
+      <div style="height: 100px; width: 150px; border: solid red">
+        <div>${champion.getTeamTitle()}</div>
+      </div>
     </div>
 
     <div class="col-sm-4" style="border: solid indigo">
