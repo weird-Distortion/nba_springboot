@@ -31,9 +31,16 @@ public class PlayAgainController {
     @RequestMapping(value = "/play-again", method = RequestMethod.POST)
     public String playAgain(
             @SessionAttribute("champs") List<Team> champList,
+            @SessionAttribute("westSchedule") List<List<Team>> westSchedule,
+            @SessionAttribute("eastSchedule") List<List<Team>> eastSchedule,
+            @SessionAttribute("playoffRounds") List<List<Team>> rounds,
             ModelMap model) {
         autoDataService.resetSeasonResults();
         champList.clear();
+        westSchedule.clear();
+        eastSchedule.clear();
+        rounds.clear();
+
         return "redirect:/schedule";
     }
 }

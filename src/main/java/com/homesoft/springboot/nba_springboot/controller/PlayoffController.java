@@ -1,6 +1,5 @@
 package com.homesoft.springboot.nba_springboot.controller;
 
-import com.homesoft.springboot.nba_springboot.model.Conference;
 import com.homesoft.springboot.nba_springboot.model.Team;
 import com.homesoft.springboot.nba_springboot.service.ConferenceService;
 import com.homesoft.springboot.nba_springboot.service.PlayoffService;
@@ -15,7 +14,8 @@ import java.util.List;
 import static java.util.Arrays.asList;
 
 @Controller
-@SessionAttributes("champs")
+@SessionAttributes(value =
+        {"champs", "playoffRounds"})
 public class PlayoffController {
 
     @Autowired
@@ -29,21 +29,24 @@ public class PlayoffController {
         return new ArrayList<>();
     }
 
+    @ModelAttribute("playoffRounds")
+    public List<List<Team>> setRounds() {
+        return new ArrayList<>();
+    }
+
     @RequestMapping(value = "/playoff", method = RequestMethod.GET)
     public String showPlayoffPage(
             @ModelAttribute("champs") List<Team> champList,
+            @SessionAttribute("westSchedule") List<List<Team>> westSchedule,
+            @SessionAttribute("eastSchedule") List<List<Team>> eastSchedule,
+            @ModelAttribute("playoffRounds") List<List<Team>> rounds,
             ModelMap model) {
 
-        model.addAttribute("westTeams",
-                conferenceService
-                        .getConferenceById(1)
-                        .getConferencePlayoffTeams());
-
-        model.addAttribute("eastTeams",
-                conferenceService
-                        .getConferenceById(2)
-                        .getConferencePlayoffTeams());
-
+        if (westSchedule.size() > 0 && eastSchedule.size() > 0) {
+            model.addAttribute("rounds", rounds);
+            model.addAttribute("westPairs", westSchedule);
+            model.addAttribute("eastPairs", eastSchedule);
+        }
 
         return "playoff";
     }
@@ -51,24 +54,13 @@ public class PlayoffController {
     @RequestMapping(value = "/playoff", method = RequestMethod.POST)
     public String playPlayoff(
             @ModelAttribute("champs") List<Team> champList,
+            @SessionAttribute("westSchedule") List<List<Team>> westSchedule,
+            @SessionAttribute("eastSchedule") List<List<Team>> eastSchedule,
+            @ModelAttribute("playoffRounds") List<List<Team>> rounds,
             ModelMap model) {
-        List<List<Team>> westSchedule =
-                playoffService
-                        .makeConferenceSchedule(conferenceService
-                                .getConferenceById(1)
-                                .getConferencePlayoffTeams());
 
-        List<List<Team>> eastSchedule =
-                playoffService
-                        .makeConferenceSchedule(conferenceService
-                                .getConferenceById(2)
-                                .getConferencePlayoffTeams());
-
-        Conference west = conferenceService.getConferenceById(1);
-        Conference east = conferenceService.getConferenceById(2);
-
-        model.addAttribute("westTeams", west.getConferencePlayoffTeams());
-        model.addAttribute("eastTeams", east.getConferencePlayoffTeams());
+        model.addAttribute("westPairs", westSchedule);
+        model.addAttribute("eastPairs", eastSchedule);
 
         List<Team> westFirstRound = playoffService.playPlayoffFirstRound(westSchedule);
         List<Team> eastFirstRound = playoffService.playPlayoffFirstRound(eastSchedule);
@@ -79,13 +71,8 @@ public class PlayoffController {
         List<Team> westThirdRound = playoffService.playPlayoffGames(westSecondRound);
         List<Team> eastThirdRound = playoffService.playPlayoffGames(eastSecondRound);
 
-        model.addAttribute("westFirstRound", westFirstRound);
-        model.addAttribute("eastFirstRound", eastFirstRound);
-        model.addAttribute("westSecondRound", westSecondRound);
-        model.addAttribute("eastSecondRound", eastSecondRound);
-        model.addAttribute("westThirdRound", westThirdRound.get(0));
-        model.addAttribute("eastThirdRound", eastThirdRound.get(0));
-
+        model.addAttribute("rounds", rounds);
+        rounds.addAll(asList(westFirstRound, westSecondRound, westThirdRound, eastFirstRound, eastSecondRound, eastThirdRound));
         champList.addAll(asList(westThirdRound.get(0), eastThirdRound.get(0)));
 
         return "playoff";

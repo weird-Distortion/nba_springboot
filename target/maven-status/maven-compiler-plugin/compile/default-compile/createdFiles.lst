@@ -3,7 +3,6 @@ com/homesoft/springboot/nba_springboot/service/DivisionService.class
 com/homesoft/springboot/nba_springboot/model/Player.class
 com/homesoft/springboot/nba_springboot/dao/DivisionDAO.class
 com/homesoft/springboot/nba_springboot/service/CrossConferenceGames.class
-com/homesoft/springboot/nba_springboot/service/PlayoffGameService.class
 com/homesoft/springboot/nba_springboot/controller/DivisionController.class
 com/homesoft/springboot/nba_springboot/NbaSpringbootApplication.class
 com/homesoft/springboot/nba_springboot/service/DivisionGames.class
@@ -13,7 +12,6 @@ com/homesoft/springboot/nba_springboot/controller/ClearDataController.class
 com/homesoft/springboot/nba_springboot/controller/PlayerController.class
 com/homesoft/springboot/nba_springboot/dao/ConferenceDAO.class
 com/homesoft/springboot/nba_springboot/service/GameLogic.class
-com/homesoft/springboot/nba_springboot/controller/FinalsController.class
 com/homesoft/springboot/nba_springboot/controller/ConferenceController.class
 com/homesoft/springboot/nba_springboot/model/Division.class
 com/homesoft/springboot/nba_springboot/dao/PlayerDAO.class
