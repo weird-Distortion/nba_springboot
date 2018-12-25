@@ -30,7 +30,10 @@ public class PlayoffController {
     }
 
     @RequestMapping(value = "/playoff", method = RequestMethod.GET)
-    public String showPlayoffPage(ModelMap model) {
+    public String showPlayoffPage(
+            @ModelAttribute("champs") List<Team> champList,
+            ModelMap model) {
+
         model.addAttribute("westTeams",
                 conferenceService
                         .getConferenceById(1)
@@ -40,6 +43,7 @@ public class PlayoffController {
                 conferenceService
                         .getConferenceById(2)
                         .getConferencePlayoffTeams());
+
 
         return "playoff";
     }

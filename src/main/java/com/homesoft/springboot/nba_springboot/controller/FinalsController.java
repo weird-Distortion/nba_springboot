@@ -24,7 +24,7 @@ public class FinalsController {
             @SessionAttribute("champs") List<Team> champList,
             ModelMap model) {
 
-        if (champList.size() == 0) {
+        if (champList.size() < 1) {
             ch = null;
         } else {
             model.addAttribute("westChampion", champList.get(0));
