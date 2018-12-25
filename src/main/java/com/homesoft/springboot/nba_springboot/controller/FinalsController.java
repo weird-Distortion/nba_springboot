@@ -5,7 +5,6 @@ import com.homesoft.springboot.nba_springboot.service.PlayoffGameService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttribute;
@@ -20,17 +19,18 @@ public class FinalsController {
 
     private Team ch = new Team();
 
-    private void setChamp(Team team) {
-        this.ch = team;
-    }
-
     @RequestMapping(value = "/finals", method = RequestMethod.GET)
     public String showFinalsPage(
             @SessionAttribute("champs") List<Team> champList,
             ModelMap model) {
 
-        model.addAttribute("champions", champList);
-        model.addAttribute("champion", ch);
+        if (champList.size() == 0) {
+            ch = null;
+        } else {
+            model.addAttribute("westChampion", champList.get(0));
+            model.addAttribute("eastChampion", champList.get(1));
+            model.addAttribute("champion", ch);
+        }
 
         return "finals";
     }
@@ -39,9 +39,13 @@ public class FinalsController {
     public String playFinals(
             @SessionAttribute("champs") List<Team> champList,
             ModelMap model) {
-        model.addAttribute("champions", champList);
-        ch = playoffGameService.playMatch(champList.get(0), champList.get(1));
-        model.addAttribute("champion", ch);
+
+        if (champList.size() > 0) {
+            model.addAttribute("westChampion", champList.get(0));
+            model.addAttribute("eastChampion", champList.get(1));
+            ch = playoffGameService.playMatch(champList.get(0), champList.get(1));
+            model.addAttribute("champion", ch);
+        }
 
         return "finals";
     }

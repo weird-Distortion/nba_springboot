@@ -1,5 +1,6 @@
 package com.homesoft.springboot.nba_springboot.controller;
 
+import com.homesoft.springboot.nba_springboot.model.Team;
 import com.homesoft.springboot.nba_springboot.service.AutoDataService;
 import com.homesoft.springboot.nba_springboot.service.ConferenceService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +8,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.SessionAttribute;
+
+import java.util.List;
 
 @Controller
 public class PlayAgainController {
@@ -25,8 +29,11 @@ public class PlayAgainController {
     }
 
     @RequestMapping(value = "/play-again", method = RequestMethod.POST)
-    public String playAgain(ModelMap model) {
+    public String playAgain(
+            @SessionAttribute("champs") List<Team> champList,
+            ModelMap model) {
         autoDataService.resetSeasonResults();
+        champList.clear();
         return "redirect:/schedule";
     }
 }
