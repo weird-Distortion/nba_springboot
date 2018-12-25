@@ -72,7 +72,7 @@ public class PlayoffController {
         List<Team> eastThirdRound = playoffService.playPlayoffGames(eastSecondRound);
 
         model.addAttribute("rounds", rounds);
-        rounds.addAll(asList(westFirstRound, westSecondRound, westThirdRound, eastFirstRound, eastSecondRound, eastThirdRound));
+        rounds.addAll(asList(westFirstRound, westSecondRound, westThirdRound, eastThirdRound, eastSecondRound, eastFirstRound));
         champList.addAll(asList(westThirdRound.get(0), eastThirdRound.get(0)));
 
         return "playoff";

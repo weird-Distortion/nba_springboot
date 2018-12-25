@@ -5,33 +5,33 @@
   <p class="text-center">NBA playoff</p>
 
   <div class="row">
-    <div class="col-sm" style="border: solid indigo">
+    <div class="col-sm outer">
       <c:forEach items="${westPairs}" var="pair">
-        <div style="height: 40px; width: 60px; border: solid darkgreen">
+        <div class="inner-div">
           <div>${pair.get(0).getTeamTitle()}</div>
         </div>
-        <div style="height: 40px; width: 60px; border: solid darkgreen">
+        <div class="inner-div">
           <div>${pair.get(1).getTeamTitle()}</div>
         </div>
       </c:forEach>
     </div>
 
     <c:forEach items="${rounds}" var="round">
-      <div class="col-sm-1" style="border: solid indigo">
+      <div class="col-sm outer">
         <c:forEach items="${round}" var="team">
-          <div style="height: 40px; width: 60px; border: solid darkgreen">
+          <div class="inner-div inner-round">
             <div>${team.getTeamTitle()}</div>
           </div>
         </c:forEach>
       </div>
     </c:forEach>
 
-    <div class="col-sm" style="border: solid indigo">
+    <div class="col-sm outer">
       <c:forEach items="${eastPairs}" var="pair">
-        <div style="height: 40px; width: 60px; border: solid darkgreen">
+        <div class="inner-div">
           <div>${pair.get(0).getTeamTitle()}</div>
         </div>
-        <div style="height: 40px; width: 60px; border: solid darkgreen">
+        <div class="inner-div">
           <div>${pair.get(1).getTeamTitle()}</div>
         </div>
       </c:forEach>

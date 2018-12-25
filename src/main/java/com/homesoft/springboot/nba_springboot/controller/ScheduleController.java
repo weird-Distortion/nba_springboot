@@ -50,7 +50,10 @@ public class ScheduleController implements NbaController {
             @ModelAttribute("eastSchedule") List<List<Team>> eastSchedule,
             ModelMap model) {
         if (conferenceService.findAllConferences().size() == 2) {
-            regularSeason.playRegularSeasonGames(conferenceService.getConferenceById(1), conferenceService.getConferenceById(2));
+            regularSeason
+                    .playRegularSeasonGames(conferenceService.getConferenceById(1),
+                            conferenceService.getConferenceById(2));
+
             model.addAttribute("conferences", conferenceService.findAllConferences());
 
             westSchedule.addAll(playoffService

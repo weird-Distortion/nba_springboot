@@ -17,6 +17,7 @@ public class FinalsController {
     @Autowired
     private PlayoffGameService playoffGameService;
 
+    //TODO: fix bug with appearing previous champion
     private Team ch = new Team();
 
     @RequestMapping(value = "/finals", method = RequestMethod.GET)

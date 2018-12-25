@@ -1,0 +1,15 @@
+.outer {
+    border: solid darkred;
+    margin: auto;
+}
+
+.inner-div {
+    margin: 1em auto;
+    border: solid darkgreen;
+    width: auto;
+    height: auto;
+}
+
+.inner-round {
+    margin: 3em auto;
+}
