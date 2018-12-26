@@ -34,12 +34,14 @@ public class PlayAgainController {
             @SessionAttribute("westSchedule") List<List<Team>> westSchedule,
             @SessionAttribute("eastSchedule") List<List<Team>> eastSchedule,
             @SessionAttribute("playoffRounds") List<List<Team>> rounds,
+            @SessionAttribute("nbaChampion") Team nbaChampion,
             ModelMap model) {
         autoDataService.resetSeasonResults();
         champList.clear();
         westSchedule.clear();
         eastSchedule.clear();
         rounds.clear();
+        nbaChampion.setTeamTitle("");
 
         return "redirect:/schedule";
     }

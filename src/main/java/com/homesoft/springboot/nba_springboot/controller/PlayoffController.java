@@ -59,21 +59,24 @@ public class PlayoffController {
             @ModelAttribute("playoffRounds") List<List<Team>> rounds,
             ModelMap model) {
 
-        model.addAttribute("westPairs", westSchedule);
-        model.addAttribute("eastPairs", eastSchedule);
+        if (rounds.size() > 0) {
+            return "redirect:/playoff";
+        }
+            model.addAttribute("westPairs", westSchedule);
+            model.addAttribute("eastPairs", eastSchedule);
 
-        List<Team> westFirstRound = playoffService.playPlayoffFirstRound(westSchedule);
-        List<Team> eastFirstRound = playoffService.playPlayoffFirstRound(eastSchedule);
+            List<Team> westFirstRound = playoffService.playPlayoffFirstRound(westSchedule);
+            List<Team> eastFirstRound = playoffService.playPlayoffFirstRound(eastSchedule);
 
-        List<Team> westSecondRound = playoffService.playPlayoffGames(westFirstRound);
-        List<Team> eastSecondRound = playoffService.playPlayoffGames(eastFirstRound);
+            List<Team> westSecondRound = playoffService.playPlayoffGames(westFirstRound);
+            List<Team> eastSecondRound = playoffService.playPlayoffGames(eastFirstRound);
 
-        List<Team> westThirdRound = playoffService.playPlayoffGames(westSecondRound);
-        List<Team> eastThirdRound = playoffService.playPlayoffGames(eastSecondRound);
+            List<Team> westThirdRound = playoffService.playPlayoffGames(westSecondRound);
+            List<Team> eastThirdRound = playoffService.playPlayoffGames(eastSecondRound);
 
-        model.addAttribute("rounds", rounds);
-        rounds.addAll(asList(westFirstRound, westSecondRound, westThirdRound, eastThirdRound, eastSecondRound, eastFirstRound));
-        champList.addAll(asList(westThirdRound.get(0), eastThirdRound.get(0)));
+            model.addAttribute("rounds", rounds);
+            rounds.addAll(asList(westFirstRound, westSecondRound, westThirdRound, eastThirdRound, eastSecondRound, eastFirstRound));
+            champList.addAll(asList(westThirdRound.get(0), eastThirdRound.get(0)));
 
         return "playoff";
     }

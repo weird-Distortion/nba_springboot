@@ -5,32 +5,34 @@ import com.homesoft.springboot.nba_springboot.service.PlayoffGameService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.SessionAttribute;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @Controller
+@SessionAttributes("nbaChampion")
 public class FinalsController {
 
     @Autowired
     private PlayoffGameService playoffGameService;
 
-    //TODO: fix bug with appearing previous champion
-    private Team ch = new Team();
+    @ModelAttribute("nbaChampion")
+    private Team setChampionTeam() {
+        Team champion = new Team();
+        champion.setTeamTitle("");
+        return champion;
+    }
 
     @RequestMapping(value = "/finals", method = RequestMethod.GET)
     public String showFinalsPage(
             @SessionAttribute("champs") List<Team> champList,
+            @ModelAttribute("nbaChampion") Team nbaChampion,
             ModelMap model) {
 
-        if (champList.size() < 1) {
-            ch = null;
-        } else {
+        if (champList.size() > 0) {
             model.addAttribute("westChampion", champList.get(0));
             model.addAttribute("eastChampion", champList.get(1));
-            model.addAttribute("champion", ch);
+            model.addAttribute("champion", nbaChampion);
         }
 
         return "finals";
@@ -39,13 +41,20 @@ public class FinalsController {
     @RequestMapping(value = "/finals", method = RequestMethod.POST)
     public String playFinals(
             @SessionAttribute("champs") List<Team> champList,
+            @ModelAttribute("nbaChampion") Team nbaChampion,
             ModelMap model) {
+
+        if (!nbaChampion.getTeamTitle().equals("")) {
+            return "redirect:/finals";
+        }
 
         if (champList.size() > 0) {
             model.addAttribute("westChampion", champList.get(0));
             model.addAttribute("eastChampion", champList.get(1));
-            ch = playoffGameService.playMatch(champList.get(0), champList.get(1));
-            model.addAttribute("champion", ch);
+            Team ch = playoffGameService.playMatch(champList.get(0), champList.get(1));
+            nbaChampion.setTeamTitle(ch.getTeamTitle());
+
+            model.addAttribute("champion", nbaChampion);
         }
 
         return "finals";
