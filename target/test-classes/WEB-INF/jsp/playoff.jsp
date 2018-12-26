@@ -2,8 +2,11 @@
 <%@ include file="common/navigation.jspf" %>
 
 <div class="container">
-  <p class="text-center">NBA playoff</p>
-
+  <p class="text-center page-title">NBA playoff</p>
+  <div class="title-flex-container">
+    <div class="conference-title">West conference</div>
+    <div class="conference-title">East conference</div>
+  </div>
   <div class="flex-container">
     <div class="outer">
       <c:forEach items="${westPairs}" var="pair">
