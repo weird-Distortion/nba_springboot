@@ -42,3 +42,17 @@
     color: green;
     font-size: 1.475em;
 }
+
+.champs {
+    margin: 3em auto;
+    text-align: center;
+    font-size: 2.475em;
+    color: red;
+    text-shadow: 0 0 1px black;
+}
+
+#champion {
+    font-size: 2.575em;
+    color: orange;
+    text-shadow: 0 0 2px black;
+}

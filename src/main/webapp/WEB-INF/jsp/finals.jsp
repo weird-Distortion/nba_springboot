@@ -2,24 +2,28 @@
 <%@ include file="common/navigation.jspf" %>
 
 <div class="container">
-  <p class="text-center">NBA finals</p>
+  <p class="text-center page-title">NBA finals</p>
+  <div class="title-flex-container">
+    <div class="conference-title">West champion</div>
+    <div class="conference-title">East champion</div>
+  </div>
 
-  <div class="row">
-    <div class="col-sm-4" style="border: solid indigo">
-      <div style="height: 100px; width: 150px; border: solid darkgreen">
-        <div>${westChampion.getTeamTitle()}</div>
+  <div class="flex-container">
+    <div class="outer">
+      <div class="champs">
+        <div class="team-title">${westChampion.getTeamTitle()}</div>
       </div>
     </div>
 
-    <div class="col-sm-4" style="border: solid indigo">
-      <div style="height: 100px; width: 150px; border: solid red">
-        <div>${champion.getTeamTitle()}</div>
+    <div class="outer">
+      <div class="champs">
+        <div class="team-title" id="champion">${champion.getTeamTitle()}</div>
       </div>
     </div>
 
-    <div class="col-sm-4" style="border: solid indigo">
-      <div style="height: 100px; width: 150px; border: solid darkgreen">
-        <div>${eastChampion.getTeamTitle()}</div>
+    <div class="outer">
+      <div class="champs">
+        <div class="team-title">${eastChampion.getTeamTitle()}</div>
       </div>
     </div>
   </div>
