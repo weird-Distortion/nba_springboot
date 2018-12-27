@@ -45,33 +45,32 @@
       </div>
     </div>
   </div>
-</div>
 
-<div class="d-flex flex-nowrap text-center">
-  <table class="table">
-    <thead class="thead-dark">
-    <tr>
-      <th>#</th>
-      <th>Name</th>
-      <th>Attack rate</th>
-      <th>Defence rate</th>
-      <th>3-point rate</th>
-    </tr>
-    </thead>
-    <tbody>
-    <c:forEach items="${players}" var="player">
+  <div class="d-flex flex-nowrap text-center">
+    <table class="table">
+      <thead class="thead-dark">
       <tr>
-        <td scope="row">${player.playerNumber}</td>
-        <td scope="row"><a
-                href="/player?id=${player.playerId}">${player.playerFirstName} ${player.playerLastName}</a></td>
-        <td scope="row">${player.playerAttackRate}</td>
-        <td scope="row">${player.playerDefenceRate}</td>
-        <td scope="row">${player.playerThreePointRate}</td>
+        <th>#</th>
+        <th>Name</th>
+        <th>Attack rate</th>
+        <th>Defence rate</th>
+        <th>3-point rate</th>
       </tr>
-    </c:forEach>
-    </tbody>
-  </table>
-</div>
+      </thead>
+      <tbody>
+      <c:forEach items="${players}" var="player">
+        <tr>
+          <td scope="row">${player.playerNumber}</td>
+          <td scope="row"><a
+                  href="/player?id=${player.playerId}">${player.playerFirstName} ${player.playerLastName}</a></td>
+          <td scope="row">${player.playerAttackRate}</td>
+          <td scope="row">${player.playerDefenceRate}</td>
+          <td scope="row">${player.playerThreePointRate}</td>
+        </tr>
+      </c:forEach>
+      </tbody>
+    </table>
+  </div>
 </div>
 
 <%@ include file="common/footer.jspf" %>
