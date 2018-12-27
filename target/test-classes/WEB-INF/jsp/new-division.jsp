@@ -11,7 +11,7 @@
         <form:label path="divisionTitle">Title</form:label>
         <form:input path="divisionTitle" type="text"/>
 
-        <div class="form-group" id="conference-form">
+        <div class="form-group new-form">
           <form:label path="divisionConference">Select conference:</form:label>
           <form:select path="divisionConference" class="form-control">
             <form:options items="${conference}" itemLabel="conferenceTitle"/>

@@ -64,7 +64,7 @@
     color: blue;
 }
 
-#conference-form {
+.new-form {
     width: 50%;
     margin: 5px auto;
 }
