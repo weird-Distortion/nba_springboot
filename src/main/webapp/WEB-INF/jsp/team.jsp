@@ -5,7 +5,7 @@
   <div class="text-center page-title">Team info</div>
   <a class="btn btn-success" href="/schedule" role="button">Back to schedule</a>
 
-  <div class="d-flex flex-nowrap justify-content-between">
+  <div class="d-flex flex-nowrap justify-content-around">
     <form:form method="post" modelAttribute="team">
       <div class="form-group text-center">
         <div>
