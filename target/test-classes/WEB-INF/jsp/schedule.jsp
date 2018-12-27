@@ -17,7 +17,7 @@
     <div class="row">
       <c:forEach items="${conferences}" var="conference">
         <div class="col-sm">
-          <div class="d-flex justify-content-center">
+          <div class="d-flex justify-content-center conference-title">
             <a href="/conference?id=${conference.conferenceId}">${conference.conferenceTitle}</a>
           </div>
           <table class="table">
