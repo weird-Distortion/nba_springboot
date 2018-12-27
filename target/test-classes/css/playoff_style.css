@@ -68,3 +68,9 @@
     width: 50%;
     margin: 5px auto;
 }
+
+.war-sign {
+    font-size: 1.675em;
+    color: orangered;
+    text-shadow: 0 0 1px black;
+}
