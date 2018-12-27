@@ -63,3 +63,8 @@
     text-shadow: 0 0 1px black;
     color: blue;
 }
+
+#conference-form {
+    width: 50%;
+    margin: 5px auto;
+}
