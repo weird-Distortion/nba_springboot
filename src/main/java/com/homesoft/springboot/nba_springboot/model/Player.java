@@ -8,22 +8,12 @@ public class Player {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int playerId;
-    @Column
+
     private String playerFirstName;
-
-    @Column
     private String playerLastName;
-
-    @Column
     private int playerNumber;
-
-    @Column
     private double playerAttackRate;
-
-    @Column
     private double playerDefenceRate;
-
-    @Column
     private double playerThreePointRate;
 
     @ManyToOne
@@ -36,10 +26,6 @@ public class Player {
 
     public int getPlayerId() {
         return playerId;
-    }
-
-    public void setPlayerId(int playerId) {
-        this.playerId = playerId;
     }
 
     public String getPlayerFirstName() {
@@ -70,24 +56,12 @@ public class Player {
         return playerAttackRate;
     }
 
-    public void setPlayerAttackRate(double playerAttackRate) {
-        this.playerAttackRate = playerAttackRate;
-    }
-
     public double getPlayerDefenceRate() {
         return playerDefenceRate;
     }
 
-    public void setPlayerDefenceRate(double playerDefenceRate) {
-        this.playerDefenceRate = playerDefenceRate;
-    }
-
     public double getPlayerThreePointRate() {
         return playerThreePointRate;
-    }
-
-    public void setPlayerThreePointRate(double playerThreePointRate) {
-        this.playerThreePointRate = playerThreePointRate;
     }
 
     public Team getPlayerTeam() {

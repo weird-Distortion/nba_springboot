@@ -28,6 +28,7 @@ public class PlayAgainController {
         return "play-again";
     }
 
+    //TODO: create all session attributes on the first page (?)
     @RequestMapping(value = "/play-again", method = RequestMethod.POST)
     public String playAgain(
             @SessionAttribute("champs") List<Team> champList,

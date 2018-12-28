@@ -21,7 +21,6 @@
 /home/distortion/projects/java/nba_springboot/src/main/java/com/homesoft/springboot/nba_springboot/service/CrossConferenceGames.java
 /home/distortion/projects/java/nba_springboot/src/main/java/com/homesoft/springboot/nba_springboot/NbaSpringbootApplication.java
 /home/distortion/projects/java/nba_springboot/src/main/java/com/homesoft/springboot/nba_springboot/dao/PlayerDAO.java
-/home/distortion/projects/java/nba_springboot/src/main/java/com/homesoft/springboot/nba_springboot/service/GameService.java
 /home/distortion/projects/java/nba_springboot/src/main/java/com/homesoft/springboot/nba_springboot/model/Conference.java
 /home/distortion/projects/java/nba_springboot/src/main/java/com/homesoft/springboot/nba_springboot/service/RegularSeason.java
 /home/distortion/projects/java/nba_springboot/src/main/java/com/homesoft/springboot/nba_springboot/controller/FinalsController.java

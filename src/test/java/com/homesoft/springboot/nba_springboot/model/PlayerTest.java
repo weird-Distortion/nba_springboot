@@ -62,7 +62,7 @@ public class PlayerTest {
     }
 
     @Test
-    public void whenFindByPlayerName_returnPlayerList() {
+    public void whenFindByPlayerNumber_returnPlayerList() {
         List<Player> foundPlayerList = playerDAO.findByPlayerNumber(testPlayer.getPlayerNumber());
 
         foundPlayerList.forEach(player ->
