@@ -40,10 +40,6 @@ public class Team {
     @OneToMany(mappedBy = "playerTeam")
     private List<Player> teamPlayers;
 
-    public void setTeamId(int teamId) {
-        this.teamId = teamId;
-    }
-
     public int getTeamId() {
         return teamId;
     }
@@ -88,6 +84,11 @@ public class Team {
         this.teamLose = teamLose;
     }
 
+    /**
+     * Rate calculating methods.
+     * @return
+     */
+
     public double getTeamWinrate() {
         if (this.gamesPlayed == 0) return 0.0;
 
@@ -97,11 +98,6 @@ public class Team {
         ) / 100d;
     }
 
-    //---------------------------------------------------------------------------------
-    /**
-     * RATE METHODS. to check
-     * @return
-     */
     public double getTeamAttackRate() {
         if (teamPlayers.size() == 0) return 0.0;
 
@@ -136,10 +132,6 @@ public class Team {
 
     public List<Player> getTeamPlayers() {
         return teamPlayers;
-    }
-
-    public void setTeamPlayers(List<Player> teamPlayers) {
-        this.teamPlayers = teamPlayers;
     }
 
     public Division getTeamDivision() {
