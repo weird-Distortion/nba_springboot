@@ -8,6 +8,10 @@ import java.util.stream.Collectors;
 @Entity
 public class Conference {
 
+    public Conference() {
+        super();
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int conferenceId;
@@ -19,10 +23,6 @@ public class Conference {
 
     @OneToMany(mappedBy = "divisionConference")
     private List<Division> conferenceDivisions;
-
-    public Conference() {
-        super();
-    }
 
     public String getConferenceTitle() {
         return conferenceTitle;

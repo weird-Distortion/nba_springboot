@@ -8,11 +8,14 @@ import java.util.stream.Collectors;
 @Entity
 public class Division {
 
+    public Division() {
+        super();
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int divisionId;
 
-    @Column
     private String divisionTitle;
 
     @ManyToOne
@@ -22,16 +25,8 @@ public class Division {
     @OneToMany(mappedBy = "teamDivision")
     private List<Team> divisionTeams;
 
-    public Division() {
-        super();
-    }
-
     public int getDivisionId() {
         return divisionId;
-    }
-
-    public void setDivisionId(int divisionId) {
-        this.divisionId = divisionId;
     }
 
     public String getDivisionTitle() {
@@ -59,9 +54,5 @@ public class Division {
                 .sorted(Comparator.comparingInt(Team::getTeamWin)
                         .reversed())
                 .collect(Collectors.toList());
-    }
-
-    public void setDivisionTeams(List<Team> divisionTeams) {
-        this.divisionTeams = divisionTeams;
     }
 }
