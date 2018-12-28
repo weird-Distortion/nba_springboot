@@ -27,18 +27,17 @@
       </div>
     </div>
   </div>
-</div>
 
-<form:form method="post" modelAttribute="playoffPlay">
-  <div class="d-flex align-items-center flex-column" id="test">
-    <div class="mr-3 my-2">
-      <button class="btn btn-success" type="submit">Play finals</button>
+  <form:form method="post" modelAttribute="playoffPlay">
+    <div class="d-flex align-items-center flex-column" id="test">
+      <div class="mr-3 my-2">
+        <button class="btn btn-success" type="submit">Play finals</button>
+      </div>
+      <div class="mr-3 my-2">
+        <a class="btn btn-info" href="/play-again">Play again</a>
+      </div>
     </div>
-    <div class="mr-3 my-2">
-      <a class="btn btn-info" href="/play-again">Play again</a>
-    </div>
-  </div>
-</form:form>
+  </form:form>
 </div>
 
 <%@ include file="common/footer.jspf" %>
