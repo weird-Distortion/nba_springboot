@@ -32,24 +32,10 @@ public class Conference {
         this.conferenceTitle = conferenceTitle;
     }
 
-    public void addTeamToConference(Team team) {
-        assert team != null;
-        conferenceTeams.add(team);
-    }
-
     public int getConferenceId() {
         return conferenceId;
     }
 
-    public void setConferenceId(int conferenceId) {
-        this.conferenceId = conferenceId;
-    }
-
-    /**
-     * TODO: change this method to simple getter but implement sorting by Ajax
-     *
-     * @return
-     */
     public List<Team> getConferenceTeams() {
         return conferenceTeams.stream()
                 .sorted(Comparator.comparingInt(Team::getTeamWin)
@@ -71,9 +57,5 @@ public class Conference {
 
     public List<Division> getConferenceDivisions() {
         return conferenceDivisions;
-    }
-
-    public void setConferenceDivisions(List<Division> conferenceDivisions) {
-        this.conferenceDivisions = conferenceDivisions;
     }
 }

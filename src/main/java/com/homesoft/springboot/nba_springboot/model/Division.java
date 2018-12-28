@@ -54,11 +54,6 @@ public class Division {
         return divisionTeams;
     }
 
-    /**
-     * TODO: change this method to simple getter but implement sorting by Ajax
-     *
-     * @return
-     */
     public List<Team> getSortedDivisionTeams() {
         return divisionTeams.stream()
                 .sorted(Comparator.comparingInt(Team::getTeamWin)
