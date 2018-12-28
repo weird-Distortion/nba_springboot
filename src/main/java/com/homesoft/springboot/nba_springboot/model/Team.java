@@ -5,6 +5,11 @@ import java.util.List;
 
 @Entity
 public class Team {
+
+    public Team() {
+        super();
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int teamId;
@@ -34,14 +39,6 @@ public class Team {
 
     @OneToMany(mappedBy = "playerTeam")
     private List<Player> teamPlayers;
-
-    public Team() {
-        super();
-    }
-
-    public void setTeamId(int teamId) {
-        this.teamId = teamId;
-    }
 
     public int getTeamId() {
         return teamId;
@@ -87,6 +84,11 @@ public class Team {
         this.teamLose = teamLose;
     }
 
+    /**
+     * Methods calculate and return team attack, defence, three point and win rates.
+     * @return
+     */
+
     public double getTeamWinrate() {
         if (this.gamesPlayed == 0) return 0.0;
 
@@ -96,11 +98,6 @@ public class Team {
         ) / 100d;
     }
 
-    //---------------------------------------------------------------------------------
-    /**
-     * RATE METHODS. to check
-     * @return
-     */
     public double getTeamAttackRate() {
         if (teamPlayers.size() == 0) return 0.0;
 
@@ -137,10 +134,6 @@ public class Team {
         return teamPlayers;
     }
 
-    public void setTeamPlayers(List<Player> teamPlayers) {
-        this.teamPlayers = teamPlayers;
-    }
-
     public Division getTeamDivision() {
         return teamDivision;
     }
@@ -148,6 +141,4 @@ public class Team {
     public void setTeamDivision(Division teamDivision) {
         this.teamDivision = teamDivision;
     }
-
-
 }
