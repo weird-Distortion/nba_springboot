@@ -4,7 +4,6 @@ import com.homesoft.springboot.nba_springboot.dao.ConferenceDAO;
 import com.homesoft.springboot.nba_springboot.dao.DivisionDAO;
 import com.homesoft.springboot.nba_springboot.dao.PlayerDAO;
 import com.homesoft.springboot.nba_springboot.dao.TeamDAO;
-import com.homesoft.springboot.nba_springboot.model.Team;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcOperations;
 import org.springframework.stereotype.Service;

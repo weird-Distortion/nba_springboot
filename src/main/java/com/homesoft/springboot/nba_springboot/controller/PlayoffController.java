@@ -14,8 +14,7 @@ import java.util.List;
 import static java.util.Arrays.asList;
 
 @Controller
-@SessionAttributes(value =
-        {"champs", "playoffRounds"})
+@SessionAttributes(value = {"champs", "playoffRounds"})
 public class PlayoffController {
 
     @Autowired
@@ -59,7 +58,7 @@ public class PlayoffController {
             @ModelAttribute("playoffRounds") List<List<Team>> rounds,
             ModelMap model) {
 
-        if (rounds.size() > 0) {
+        if (rounds.size() > 0 || westSchedule.size() == 0 || eastSchedule.size() == 0) {
             return "redirect:/playoff";
         }
             model.addAttribute("westPairs", westSchedule);

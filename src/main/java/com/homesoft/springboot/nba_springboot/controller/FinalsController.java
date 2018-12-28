@@ -44,18 +44,17 @@ public class FinalsController {
             @ModelAttribute("nbaChampion") Team nbaChampion,
             ModelMap model) {
 
-        if (!nbaChampion.getTeamTitle().equals("")) {
+        if (!nbaChampion.getTeamTitle().equals("") || champList.size() == 0) {
             return "redirect:/finals";
         }
 
-        if (champList.size() > 0) {
-            model.addAttribute("westChampion", champList.get(0));
-            model.addAttribute("eastChampion", champList.get(1));
-            Team ch = playoffGameService.playMatch(champList.get(0), champList.get(1));
-            nbaChampion.setTeamTitle(ch.getTeamTitle());
+        model.addAttribute("westChampion", champList.get(0));
+        model.addAttribute("eastChampion", champList.get(1));
+        Team ch = playoffGameService.playMatch(champList.get(0), champList.get(1));
+        nbaChampion.setTeamTitle(ch.getTeamTitle());
 
-            model.addAttribute("champion", nbaChampion);
-        }
+        model.addAttribute("champion", nbaChampion);
+
 
         return "finals";
     }
