@@ -56,6 +56,9 @@
         <div class="mr-3 my-2">
           <button class="btn btn-success" type="submit">Play regular season</button>
         </div>
+        <div class="mr-3 my-2">
+          <a class="btn btn-info" href="/play-again">Play again</a>
+        </div>
       </div>
     </form:form>
   </div>

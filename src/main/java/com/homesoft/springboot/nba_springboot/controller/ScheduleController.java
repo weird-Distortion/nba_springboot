@@ -7,16 +7,13 @@ import com.homesoft.springboot.nba_springboot.service.RegularSeason;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.annotation.SessionAttribute;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Controller
-@SessionAttributes(value = {"westSchedule", "eastSchedule"})
 public class ScheduleController implements NbaController {
 
     @Autowired
@@ -28,16 +25,6 @@ public class ScheduleController implements NbaController {
     @Autowired
     private PlayoffService playoffService;
 
-    @ModelAttribute("westSchedule")
-    public List<List<Team>> setWestSchedule() {
-        return new ArrayList<>();
-    }
-
-    @ModelAttribute("eastSchedule")
-    public List<List<Team>> setEastSchedule() {
-        return new ArrayList<>();
-    }
-
     @RequestMapping(value = "/schedule", method = RequestMethod.GET)
     public String showSchedule(ModelMap model) {
         model.addAttribute("conferences", conferenceService.findAllConferences());
@@ -46,8 +33,8 @@ public class ScheduleController implements NbaController {
 
     @RequestMapping(value = "/schedule", method = RequestMethod.POST)
     public String playRegularSeason(
-            @ModelAttribute("westSchedule") List<List<Team>> westSchedule,
-            @ModelAttribute("eastSchedule") List<List<Team>> eastSchedule,
+            @SessionAttribute("westSchedule") List<List<Team>> westSchedule,
+            @SessionAttribute("eastSchedule") List<List<Team>> eastSchedule,
             ModelMap model) {
         if (conferenceService.findAllConferences().size() == 2) {
             regularSeason

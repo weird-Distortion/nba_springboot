@@ -10,23 +10,15 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Controller
-@SessionAttributes("nbaChampion")
 public class FinalsController {
 
     @Autowired
     private PlayoffGameService playoffGameService;
 
-    @ModelAttribute("nbaChampion")
-    private Team setChampionTeam() {
-        Team champion = new Team();
-        champion.setTeamTitle("");
-        return champion;
-    }
-
     @RequestMapping(value = "/finals", method = RequestMethod.GET)
     public String showFinalsPage(
             @SessionAttribute("champs") List<Team> champList,
-            @ModelAttribute("nbaChampion") Team nbaChampion,
+            @SessionAttribute("nbaChampion") Team nbaChampion,
             ModelMap model) {
 
         if (champList.size() > 0) {
@@ -41,7 +33,7 @@ public class FinalsController {
     @RequestMapping(value = "/finals", method = RequestMethod.POST)
     public String playFinals(
             @SessionAttribute("champs") List<Team> champList,
-            @ModelAttribute("nbaChampion") Team nbaChampion,
+            @SessionAttribute("nbaChampion") Team nbaChampion,
             ModelMap model) {
 
         if (!nbaChampion.getTeamTitle().equals("") || champList.size() == 0) {

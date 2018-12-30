@@ -8,3 +8,4 @@
   <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/playoff_style.css">
   <meta charset="UTF-8">
 </head>
+<body>
