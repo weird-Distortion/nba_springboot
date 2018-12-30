@@ -1,2 +1,9 @@
-# nba_springboot
-NBA simulation with Spring boot
+# NBA simulation
+Simple NBA simulator with:
+`Java`
+`Spring boot`
+`Database`
+`css`
+
+
+
